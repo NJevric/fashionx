@@ -236,6 +236,13 @@ header{
     background-size: cover;
     padding:80px 0px;
 }
+.blogNaslov h2{
+    font-size:3em;
+}
+.blogNaslov p{
+    font-size:1.2em;
+    margin-bottom:80px;
+}
 .blokSlikePadding{
     padding-left: 0px!important;
     padding-right: 0px!important;
@@ -279,10 +286,13 @@ font-weight: 500;
 
 /* FOOTER */
 footer{
-    min-height: 700px;
+    /* min-height: 700px; */
     background-color: #050505;
     color:#fff;
     
+}
+.marginaFoo .row{
+    margin-left:0px!important;
 }
 .posts img {
     width:100%;
@@ -300,6 +310,41 @@ footer{
 .fooInsta h2{
     margin-top:50px;
     margin-bottom:30px;
+}
+.fooInfo{
+    margin-top:50px;
+}
+
+.placanje p:nth-of-type(1){
+    width:300px;
+    line-height: 1.8;
+    font-size:0.95em;
+}
+.placanje p:nth-of-type(2){
+    font-size:0.9em;
+}
+.kartice i{
+    font-size:1.7em;
+}
+.kartice i:nth-of-type(2){
+    margin:0px 10px;
+}
+.fooCopy{
+    padding-top:100px;
+}
+.fooCopy{
+    font-size:0.9em;
+}
+.mapa{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.mapa iframe{
+    height:250px;
+    width:80%;
+}
+.fooLinkovi p{
+    margin-bottom: 0.5rem!important;
 }
     /* padding-left: 15px;
 /* KRAJ FOOTERA */
