@@ -132,7 +132,7 @@ header{
 }
 #glavniSlike{
     background: #f9f9f9;
-    width:99.85vw;
+    /* width:99.85vw; */
 }
 .mainSlike{
     /* background-color:rgba(142, 68, 173,0.8); */
@@ -144,8 +144,8 @@ header{
 }
 .mainSlike h2{
     position: absolute;
-    bottom:175px;
-    left:250px;
+    bottom:140px;
+    left:175px;
     text-align: center;
     background:transparent;
     color:#fff;
@@ -156,6 +156,10 @@ header{
 
 #glavniSlike img{
     width:550px;
+    /* height:300px; */
+}
+#glavniSlike img:nth-of-type(1){
+    height:250px;
 }
 /*KRAJ 3 BLOKA HOMEPAGE */
 /* O NAMA */
