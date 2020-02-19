@@ -1,0 +1,305 @@
+*{
+    padding: 0px;
+    margin:0px;
+   
+}
+.container{
+    max-width:1450px!important;
+}
+header{
+    overflow: inherit;
+    height: 70vh;
+    /* background-image: url(../bcimg5.jpg); */
+    background-image: url(../heder.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* background: #f9f9f9; */
+    position: relative;
+}
+
+/* NAVIGACIJA */
+#logo img{
+    width:120px;
+    margin-top: 10px;
+}
+#navigacija ul li{
+    list-style: none;
+    font-size:1.4em;
+    font-weight: 400;
+    
+    transition: 0.3s ease-in;
+    padding:15px 20px;
+    background-color:rgba(0,0,0,0.0);
+}
+#navigacijaLinkovi{
+    display:none;
+}
+.active{
+    display:block!important;
+    position: absolute;
+    top:100px;
+    right:0px;
+    z-index: 100;
+}
+
+#hamburger{
+    position: absolute;
+    top:20px;
+    right: 20px;
+}
+.ham{
+    width: 35px;
+    height: 3px;
+    background-color:#CFB53B;
+   
+}
+.ham:nth-of-type(1){
+    width:40px;
+}
+.ham:nth-of-type(2){
+   margin:5px 0px;
+    margin-left:5px;
+}
+.ham:nth-of-type(3){
+    width:30px;
+    margin-left:10px;
+}
+#searchNav{
+    width:200px;
+    padding-top:15px;
+    margin-right: 100px;
+}
+#searchNav input{
+    border:none;
+    border-bottom: 1px solid #000;
+    border-radius:0px;
+    color:#000;
+    height: 35px;
+    background: #f9f9f9;
+}
+#searchNav i{
+    font-size:1.3em;
+    color:#000;
+}
+#searchNav input:focus{
+    border-bottom-color: #1a1aff;
+    box-shadow: 0px 1px 0px 0px rgba(0, 0, 153,0.35);
+  /* box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6); */
+}
+.form-control:focus {
+    border-color:none;
+    box-shadow: none;
+    
+  }
+
+
+/* KRAJ NAVIGACIJE */
+/* NASLOV */
+
+#naslov h1{
+    font-size:3em;
+    /* margin-left: 100px; */
+    margin-top:150px;
+}
+#naslov h1 span{
+    font-size:1.5em;
+}
+#naslov h1,#naslov h2,#naslov p{
+    /* margin-left: 150px; */
+}
+.tekstNaslov{
+    font-size:2em;
+}
+.dugmeNaslov{
+    font-size:1.5em;
+    border:1px solid goldenrod;
+    width:150px;
+    padding:10px 5px;
+    transition:0.2s ease-in;
+    font-weight: 600;
+}
+.dugmeNaslov:hover{
+    background-color:goldenrod;
+   
+}
+
+/* KRAJ NASLOVA */
+/* 3 BLOKA HOMEPAGE */
+#glavni {
+   /* margin-top:50px; */
+   background: #f9f9f9;
+}
+#glavniSlike{
+    background: #f9f9f9;
+    width:99.85vw;
+}
+.mainSlike{
+    /* background-color:rgba(142, 68, 173,0.8); */
+    /* background-color:rgba(155, 89, 182,0.8); */
+    /* background-color: rgba(244, 121, 131,0.8); */
+    background-color:rgba(255,255,255,0.0);
+
+  
+}
+.mainSlike h2{
+    position: absolute;
+    bottom:175px;
+    left:250px;
+    text-align: center;
+    background:transparent;
+    color:#fff;
+    width:150px;
+    font-size:2.5em;
+    text-transform: uppercase;
+}
+
+#glavniSlike img{
+    width:550px;
+}
+/*KRAJ 3 BLOKA HOMEPAGE */
+/* O NAMA */
+#about{
+    background: #f9f9f9;
+    margin: 150px 0px;
+  
+}
+
+.onamaTekst p ,.onamaTekst h2{
+    /* margin:0px auto; */
+    width: 550px;
+}
+.onamaTekst h2{
+    font-size:2.5em;
+    margin-top:40px;
+    margin-bottom: 30px;
+}
+.onamaTekst p {
+    font-size:1.05em;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+.onamaSlika{
+    display: block;
+}
+/* subscription */
+#subscription{
+    height:600px;
+    background-image: url("../sub2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}  
+.subTekst h2{
+    font-size:4em;
+    color:black;
+    padding-top:100px;
+    width:500px;
+    margin:0px auto;
+}
+.subTekst form input{
+    width:300px;
+    height:45px;
+}
+.subTekst form input:nth-of-type(2){
+   margin-top:15px;
+    background-color: #C93756;
+    color:#fff;
+    border:0px;
+}
+.subTekst form{
+    width:300px;
+    margin:0px auto;
+    margin-top:50px;
+}
+/* subscription */
+
+/* TRANSPORT */
+#transport{
+    padding:100px 0px;
+    background: #f9f9f9;
+}
+#transport h3{
+    text-transform: uppercase;
+    font-size:1.5em;
+    
+}
+#transport p{
+    width:250px;
+    text-align: left;
+}
+
+/* KRAJ TRANSPORTA */
+/* blog */
+#blog{
+    background-image: url('../heder.jpg');
+    background-size: cover;
+    padding:80px 0px;
+}
+.blokSlikePadding{
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+}
+.blog1{
+    /* margin-bottom: 50px; */
+  
+}
+.blogTekst{
+    background-color: #fff;
+}
+#blog h3{
+    margin-bottom: 30px;
+}
+
+#blog p:nth-of-type(2){
+    width:500px;
+    font-size:1.1em;
+    padding-bottom: 30px;
+    border-bottom: 1px solid gray;
+}
+#blog p:nth-of-type(1){
+font-weight: 500;
+}
+#blog p:nth-of-type(3){
+    font-weight: 500;
+    /* background-color: #C93756; */
+    width:150px;
+    text-align: center;
+    color:#000;
+    font-size:1.05em;
+    padding:10px 10px;
+    border:2px solid #C93756;
+    transition:0.2s ease-in;
+    }
+#blog p:nth-of-type(3):hover{
+    background-color: #C93756;
+    color:#fff;
+}
+/* kraj bloga */
+
+/* FOOTER */
+footer{
+    min-height: 700px;
+    background-color: #050505;
+    color:#fff;
+    
+}
+.posts img {
+    width:100%;
+    height: 100%;
+    transition:0.2s ease-in-out;
+}
+.posts img:hover{
+    border:4px solid goldenrod;
+}
+.paddingInstagram{
+    padding-right: 5px; 
+    padding-left: 5px;
+}
+
+.fooInsta h2{
+    margin-top:50px;
+    margin-bottom:30px;
+}
+    /* padding-left: 15px;
+/* KRAJ FOOTERA */
