@@ -537,8 +537,13 @@ footer{
         padding-top: 50px;
         width: 300px;
     }
-   
+    #naslov h1 {
+        width:300px;
+    }
+    
     .tekstNaslov {
-        font-size: 1.3em;
+  
+        width:300px;
+       
     }
 }
