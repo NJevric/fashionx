@@ -1,19 +1,4 @@
-// window.onload=function(){
-   
-  
-    
-    
-// }
-// $(function() {                       //run when the DOM is ready
-//   $("#hamburger").click(function() {  //use a class, since your ID gets mangled
-//     $("#navigacijaLinkovi").addClass("active"); 
-    
-//   });
-//   $("#hamburger").click(function() {  //use a class, since your ID gets mangled
-//     $("#navigacijaLinkovi").removeClass("active"); 
-  
-//   });
-// });
+
 window.onload=function(){
   $.ajax({
     url: "https://www.instagram.com/fineamode?__a=1",
@@ -24,14 +9,33 @@ window.onload=function(){
         posts_html = '';
         for (var i = 0; i < 6; i++) {
             url = posts[i].node.display_url;
-            posts_html += '<div class="col-6 col-sm-6 col-md-4 col-lg-2 equal-height paddingInstagram"><a href="https://www.instagram.com/"><img  src="' + url + '" alt="Instagram post" /></a></div>';
+            posts_html += '<div class="col-4 col-sm-4 col-md-4 col-lg-2 equal-height paddingInstagram"><a href="https://www.instagram.com/"><img  src="' + url + '" alt="Instagram post" /></a></div>';
         }
         document.querySelector(".posts").innerHTML+=posts_html;
     },
     error(status){
         console.log(status);
-    }
+    } 
 });
+
 }
+var url=location.href;
+
+$(document).ready(function () {
+
+    $("#navigacijaLinkovi").hide();
+    $("#hamburger").show();
+
+    $('#hamburger').click(function () {
+        $("#navigacijaLinkovi").toggle("slide");
+    });
+
+});
+
+$(window).on("load",function(){
+    $("#naslov").animate({opacity:'1'},2500);
+    $("#logo").animate({opacity:'1'},2000);
+    $("#navigacija").animate({opacity:'1'},2000);
+})
 
 
