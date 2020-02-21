@@ -188,15 +188,13 @@ header{
 }
 
 #glavniSlike img{
-    width:550px;
+    /* width:550px; */
     /* height:300px; */
     position: relative;
     
 }
 
-#glavniSlike img:nth-of-type(1){
-    height:250px;
-}
+
 /*KRAJ 3 BLOKA HOMEPAGE */
 /* O NAMA */
 #about{
@@ -425,7 +423,7 @@ footer{
         padding: 8px 4px;
     }
     #glavniSlike{
-        display: none;
+        /* display: none; */
     }
     #about{
         margin-top:0px;
@@ -516,6 +514,10 @@ footer{
     }
     .naslovSlika{
         margin-top:100px;
+    }
+    #glavniSlike{
+     width:100%;
+        
     }
     .onamaTekst p{
         font-size:0.95em;
