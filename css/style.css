@@ -483,6 +483,10 @@ footer{
     
   }
   @media screen and (max-width: 576px) {
+    #logo img{
+        width:90px;
+        margin-top: 10px;
+    }
     #searchNav input,#searchNav i{
         display:none;
     }
@@ -496,6 +500,11 @@ footer{
         top:60px;
      
         
+    }
+    .dugmeNaslov {
+        font-size: 1.1em;
+        width: 100px;
+        padding: 6px 3px;
     }
     #naslov h1 {
         font-size: 2em;
@@ -527,5 +536,9 @@ footer{
         font-size: 2.5em;
         padding-top: 50px;
         width: 300px;
+    }
+   
+    .tekstNaslov {
+        font-size: 1.3em;
     }
 }
