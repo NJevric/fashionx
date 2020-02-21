@@ -393,6 +393,21 @@ footer{
 
 
 @media screen and (max-width: 1024px) {
+    #navigacijaLinkovi{
+        position:absolute;
+        right:10px;
+        top:80px;
+     
+        
+    }
+    #navigacija ul li{
+       
+        font-size:17px;
+        
+        display:block;
+        
+        
+    }
     #naslov h1 {
         font-size: 2.5em;
         
@@ -418,6 +433,7 @@ footer{
     }
     .onamaTekst p,.onamaTekst h2{
         width:auto;
+
     }
     #subscription {
         height: 500px;
@@ -440,7 +456,13 @@ footer{
   }
 
   @media screen and (max-width: 768px) {
-   
+    #navigacijaLinkovi{
+        position:absolute;
+        right:-10px;
+        top:80px;
+     
+        
+    }
     #subscription {
         height: 400px;
     }
@@ -464,12 +486,15 @@ footer{
     #searchNav input,#searchNav i{
         display:none;
     }
+    #hamburger {
+        position: absolute;
+        top: 20px;
+        right: -10px;
+    }
     #navigacijaLinkovi{
-        position:absolute;
-        right:20px;
-        top:20px;
-        /* text-align:left; */
-        /* display:none; */
+        right:-30px;
+        top:60px;
+     
         
     }
     #naslov h1 {
@@ -482,6 +507,9 @@ footer{
     }
     .naslovSlika{
         margin-top:100px;
+    }
+    .onamaTekst p{
+        font-size:0.95em;
     }
     #blog p:nth-of-type(2) {
         width: 350px;

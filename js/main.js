@@ -19,18 +19,32 @@ window.onload=function(){
 });
 
 }
-var url=location.href;
 
-$(document).ready(function () {
 
-    $("#navigacijaLinkovi").hide();
-    $("#hamburger").show();
+// $(document).ready(function () {
 
-    $('#hamburger').click(function () {
-        $("#navigacijaLinkovi").toggle("slide");
-    });
+//     $("#navigacijaLinkovi").hide();
+//     $("#hamburger").show();
 
-});
+//     $('#hamburger').click(function () {
+//         $("#navigacijaLinkovi").toggle("slide");
+//     });
+
+// });
+
+var url=location.href
+    navigacija();
+    function navigacija(){
+        
+        
+      
+        
+        $("#hamburger").click(function(){
+            $("#navigacijaLinkovi").slideToggle();
+           
+        });
+      
+    }
 
 $(window).on("load",function(){
     $("#naslov").animate({opacity:'1'},2500);
