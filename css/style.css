@@ -540,10 +540,12 @@ footer{
     #naslov h1 {
         width:300px;
     }
-    
+    #naslov{
+        position:relative;
+    }
     .tekstNaslov {
-  
+        position: relative;
         width:300px;
-       
+       z-index:101;
     }
 }
