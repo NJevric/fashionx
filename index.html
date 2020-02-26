@@ -11,13 +11,13 @@
         <header>
             <div class="row container-fluid">
                 <div class="col-lg-2 col-2" id="logo">
-                   <img src="logo.png" alt="logo"/>
+                   <a href="index.html"><img src="img/logo.png" alt="logo"/></a>
                 </div> 
                 <div class="col-lg-10 col-10" id="navigacija">
-                    <div id="searchNav" class="md-form mt-0 ml-auto d-flex">
+                    <!-- <div id="searchNav" class="md-form mt-0 ml-auto d-flex">
                         <i class="fas fa-search mt-2 mr-2"></i>
                         <input class="form-control" type="text" placeholder="Search" aria-label="Search"/>
-                      </div>
+                      </div> -->
                     <div id="hamburger">
                         <div class="ham"></div>
                         <div class="ham"></div>
@@ -26,12 +26,11 @@
                     
                     
                     <ul id="navigacijaLinkovi">
-                        <li>Home</li>
-                        <li>Man
-                        </li>
-                        <li>Woman</li>
-                        <li>Blog</li>
-                        <li>Contact</li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="man.html">Man</a></li>
+                        <li><a href="woman.html">Woman</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                
                 </div>
@@ -43,29 +42,31 @@
                 <div class="col-lg-6 col-6">
                     <h1>Best Choice For Everyone<br/><span>FashionX</span></h1>
                     <p class="tekstNaslov">New, Amazing stuff Is Here</p>
-                    <p class="dugmeNaslov text-center">Shop Now</p>
-                   
+                    <div class="d-flex responsiveDugme">
+                    <p class="text-center mr-3 dugmeNaslov"><a href="man.html">Men's clothes</a></p>
+                    <p class="text-center dugmeNaslov"><a href="man.html">Women's clothes</a></p>
+                   </div>
                 </div>
                 <div class="col-lg-6 col-6 naslovSlika">
-                    <img src="slika3.png" class="img-fluid slika">
+                    <img src="img/slika3.png" class="img-fluid slika">
                 </div>
             </div>
         </section>
         </header>
         <section id="glavni">
             <div class="row container mx-auto" id="glavniSlike">
-                <div class="col-lg-4 col-10 mx-auto mainSlike pl-0">
-                    <img src="musko.jpg" class="slikaMain img-fluid">
-                    <h2>Man</h2>
+                <!-- <div class="col-lg-4 col-10 mx-auto mainSlike pl-0">
+                    <img src="img/musko.jpg" class="slikaMain img-fluid" onmouseover="bigImg();" onmouseout="normalImg();">
+                    <h2 class="prikaz">Man</h2>
                 </div>
-                <div class="col-lg-4 col-10 mx-auto py-5 py-md-0 mainSlike pl-0 pl-md-5">
-                    <img src="patike.jpg" class="slikaMain img-fluid">
+                <div class="col-lg-4 col-10 mx-auto py-4 py-md-0 mainSlike pl-0">
+                    <img src="img/patike.jpg" class="slikaMain img-fluid">
                     <h2>Shoes</h2>
                 </div>
-                <div class="col-lg-4 col-10 mx-auto mainSlike pl-0 pl-md-5">
-                    <img src="woman.jpg" class="slikaMain img-fluid">
+                <div class="col-lg-4 col-10 mx-auto mainSlike pl-0">
+                    <img src="img/woman.jpg" class="slikaMain img-fluid">
                     <h2>Women</h2>
-                </div>
+                </div> -->
             </div>
             <div id="about">
                 <div class="row container onama mx-auto">
@@ -77,7 +78,7 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat..</p>
                     </div>
                     <div class="col-lg-5 col-sm-8 pt-4 pt-lg-0 mx-sm-auto onamaSlika text-right">
-                        <img src="onama.jpg" alt="O nama" class="img-fluid"/>
+                        <img src="img/onama.jpg" alt="O nama" class="img-fluid"/>
                     </div>
                 </div>
             </div>
@@ -130,13 +131,13 @@
                 <div class="row container mx-auto blog1">
                     
                     <div class="col-lg-6 col-md-10 mx-auto blokSlikePadding">
-                        <img src="sub1.jpg" alt="" class="img-fluid"/>
+                        <img src="img/sub1.jpg" alt="" class="img-fluid"/>
                     </div>
                     <div class="col-lg-6 col-md-10 mx-auto p-3 p-xl-5 blogTekst">
                         <h3>Blog Naslov</h3>
                         <p>By njevric February 23, 2020</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <p>Find out More</p>
+                        <p id="dugmeBlog" onmouseover="hoverIn();">Find out More</p>
                        
                     </div>
                 </div>
@@ -146,10 +147,10 @@
                         <p>By njevric February 23, 2020</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                       
-                        <p>Find out More</p>
+                        <p id="dugmeBlog">Find out More</p>
                     </div>
                     <div class="col-lg-6 col-md-10 mx-auto blokSlikePadding">
-                        <img src="sub2.jpg" alt="" class="img-fluid"/>
+                        <img src="img/sub2.jpg" alt="" class="img-fluid"/>
                     </div>
                 </div>
             </div>

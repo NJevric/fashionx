@@ -1,0 +1,134 @@
+[
+    {
+        "slika":{
+            "src":"blog1.jpg",
+            "alt":"blog 1"
+        },
+        "naslov":"Blog 1",
+        "autor":{
+            "id":1,
+            "user":"njevric"
+        },
+        "datum":"2020-02-23",
+        "tekst":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+        "kategorija":"trends",
+        "komentari":[
+            {
+                "id":1,
+                "tekst":"asddsaasdads"
+            },
+            {
+                "id":1,
+                "tekst":"asddsaasdads"
+            }
+        ]
+    },
+    {
+        "slika":{
+            "src":"blog2.jpg",
+            "alt":"blog 1"
+        },
+        "naslov":"Blog 1",
+        "autor":{
+            "id":1,
+            "user":"njevric"
+        },
+        "datum":"2020-02-26",
+        "tekst":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+        "kategorija":"news",
+        "komentari":[
+            {
+                "id":1,
+                "tekst":"asddsaasdads"
+            },
+            {
+                "id":1,
+                "tekst":"asddsaasdads"
+            }
+        ]
+    },
+    {
+        "slika":{
+            "src":"blog3.jpg",
+            "alt":"blog 1"
+        },
+        "naslov":"Blog 1",
+        "autor":{
+            "id":1,
+            "user":"njevric"
+        },
+        "datum":"2020-03-01",
+        "tekst":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+        "kategorija":"trends",
+        "komentari":[
+            {
+                "id":1,
+                "tekst":"asddsaasdads"
+            },
+            {
+                "id":1,
+                "tekst":"asddsaasdads"
+            }
+        ]
+    },
+    {
+        "slika":{
+            "src":"blog4.jpg",
+            "alt":"blog 1"
+        },
+        "naslov":"Blog 1",
+        "autor":{
+            "id":1,
+            "user":"njevric"
+        },
+        "datum":"2020-01-16",
+        "tekst":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+        "kategorija":"trends",
+        "komentari":[
+            {
+                "id":1,
+                "tekst":"asddsaasdads"
+            },
+            {
+                "id":1,
+                "tekst":"asddsaasdads"
+            }
+        ]
+    },
+    {
+        "slika":{
+            "src":"blog5.jpg",
+            "alt":"blog 1"
+        },
+        "naslov":"Blog 1",
+        "autor":{
+            "id":1,
+            "user":"njevric"
+        },
+        "datum":"2020-02-10",
+        "tekst":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+        "kategorija":"news",
+        "komentari":[
+            {
+                "id":1,
+                "tekst":"asddsaasdads"
+            }
+          
+        ]
+    },
+    {
+        "slika":{
+            "src":"blog6.jpg",
+            "alt":"blog 1"
+        },
+        "naslov":"Blog 1",
+        "autor":{
+            "id":1,
+            "user":"njevric"
+        },
+        "datum":"2020-03-07",
+        "tekst":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+        "kategorija":"trends",
+        "komentari":[]
+    }
+]
