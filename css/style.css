@@ -633,6 +633,10 @@ main{
     
   }
   @media screen and (max-width: 576px) {
+    #proizvodiPrikaz, #blogPrikaz {
+        margin:0px auto;
+        padding-left: 0px;
+    }
       /* poput */
       #linkoviFixed {
         z-index: 101;
