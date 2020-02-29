@@ -14,6 +14,40 @@ $(window).on("load",function(){
     $("#logo").animate({opacity:'1'},2000);
     $("#navigacija").animate({opacity:'1'},2000);
 })
+
+
+$(document).ready(function () {
+
+    $(".socials").hide();
+    $("#SocialClick i").show();
+
+    $("#SocialClick i").click(function () {
+        $(".socials").toggle("slide");
+       
+    });
+
+    $(".phone").hide();
+    $("#PhoneClick i").show();
+
+    $("#PhoneClick i").click(function () {
+        $(".phone").toggle("slide");
+       
+    });
+
+    $(".email").hide();
+    $("#EmailClick i").show();
+
+    $("#EmailClick i").click(function () {
+        $(".email").toggle("slide");
+       
+    });
+
+});
+
+
+$(".named").click(function(){
+    console.log($(this).find("h5").data("value"));
+});
 function navigacija(){
     $("#hamburger").click(function(){
         $("#navigacijaLinkovi").slideToggle();
@@ -88,7 +122,7 @@ function ispisProizvodaFilter(obj){
     let ispis="";
 
    obj.forEach(element => {ispis+=` 
-        <div class="col-lg-4 proizvod">
+        <div class="col-lg-4 proizvod mb-5">
         <div class="proizvodSlika">
         <img src="img/${element.slika.src}" class="img-fluid mb-3" alt="${element.slika.alt}"/>
         </div>
