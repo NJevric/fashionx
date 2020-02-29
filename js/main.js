@@ -6,12 +6,12 @@ window.onload=function(){
     ispisiSelectSort();
     document.getElementById("sortiranje").addEventListener("change",sortiraj);
     this.ispisSelectFilter();
-    if(this.screen.width<400){
-        document.getElementById("hamburger").addEventListener("click",function(){
-            let stil=document.getElementById("navigacijaPromenaBojeMaliEkran");
-            stil.style.backgroundColor="rgba(0,0,0,0.75)";
-        })
-    }
+    // if(this.screen.width<400){
+    //     document.getElementById("hamburger").addEventListener("click",function(){
+    //         let stil=document.getElementById("navigacijaPromenaBojeMaliEkran");
+    //         stil.style.backgroundColor="rgba(0,0,0,0.75)";
+    //     })
+    // }
 }
 // ZA SVE STRANICE
 $(window).on("load",function(){
@@ -19,37 +19,6 @@ $(window).on("load",function(){
     $("#logo").animate({opacity:'1'},2000);
     $("#navigacija").animate({opacity:'1'},2000);
 })
-
-
-$(document).ready(function () {
-
-    $(".socials").hide();
-    $("#SocialClick i").show();
-
-    $("#SocialClick i").click(function () {
-        $(".socials").toggle("slide");
-       
-    });
-
-    $(".phone").hide();
-    $("#PhoneClick i").show();
-
-    $("#PhoneClick i").click(function () {
-        $(".phone").toggle("slide");
-       
-    });
-
-    $(".email").hide();
-    $("#EmailClick i").show();
-
-    $("#EmailClick i").click(function () {
-        $(".email").toggle("slide");
-       
-    });
-
-});
-
-
 
 function navigacija(){
     $("#hamburger").click(function(){
@@ -97,7 +66,33 @@ if(url.indexOf("index.html")!=-1){
 //     document.i.addEventListener("mouseover",hoverIn);
 //     document.i.addEventListener("mouseout",hoverOut);
 // }
+$(document).ready(function () {
 
+    $(".socials").hide();
+    $("#SocialClick i").show();
+
+    $("#SocialClick i").click(function () {
+        $(".socials").toggle("slide");
+       
+    });
+
+    $(".phone").hide();
+    $("#PhoneClick i").show();
+
+    $("#PhoneClick i").click(function () {
+        $(".phone").toggle("slide");
+       
+    });
+
+    $(".email").hide();
+    $("#EmailClick i").show();
+
+    $("#EmailClick i").click(function () {
+        $(".email").toggle("slide");
+       
+    });
+
+});
 }
 
 
@@ -125,7 +120,7 @@ function ispisProizvodaFilter(obj){
     let ispis="";
 
    obj.forEach(element => {ispis+=` 
-        <div class="col-lg-4 col-md-4 col-9 proizvod mb-5 mx-auto mx-md-0">
+        <div class="col-lg-4 col-md-4 col-6 proizvod mb-5  mx-md-0">
         <div class="proizvodSlika">
         <img src="img/${element.slika.src}" class="img-fluid mb-3 mx-auto" alt="${element.slika.alt}"/>
         </div>
