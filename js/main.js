@@ -6,7 +6,12 @@ window.onload=function(){
     ispisiSelectSort();
     document.getElementById("sortiranje").addEventListener("change",sortiraj);
     this.ispisSelectFilter();
-
+    if(this.screen.width<400){
+        document.getElementById("hamburger").addEventListener("click",function(){
+            let stil=document.getElementById("navigacijaPromenaBojeMaliEkran");
+            stil.style.backgroundColor="rgba(0,0,0,0.75)";
+        })
+    }
 }
 // ZA SVE STRANICE
 $(window).on("load",function(){
@@ -45,9 +50,7 @@ $(document).ready(function () {
 });
 
 
-$(".named").click(function(){
-    console.log($(this).find("h5").data("value"));
-});
+
 function navigacija(){
     $("#hamburger").click(function(){
         $("#navigacijaLinkovi").slideToggle();
@@ -122,9 +125,9 @@ function ispisProizvodaFilter(obj){
     let ispis="";
 
    obj.forEach(element => {ispis+=` 
-        <div class="col-lg-4 proizvod mb-5">
+        <div class="col-lg-4 col-md-4 col-9 proizvod mb-5 mx-auto mx-md-0">
         <div class="proizvodSlika">
-        <img src="img/${element.slika.src}" class="img-fluid mb-3" alt="${element.slika.alt}"/>
+        <img src="img/${element.slika.src}" class="img-fluid mb-3 mx-auto" alt="${element.slika.alt}"/>
         </div>
         <h3>${element.naslov}</h3>
         <p>${element.opis}</p>
@@ -238,8 +241,10 @@ function ispisSelectFilter(){
             let ispis="";
             data.muski.forEach(i => {
                 ispis+=`<div class="form-check" id="filtriraj">
+
                 <input type="checkbox" class="form-check-input tipovi" value="${i.naziv}">
                 <label class="form-check-label ml-3" for="${i.id}">${i.naziv}</label>
+
                 <hr/>
             </div>`
             });

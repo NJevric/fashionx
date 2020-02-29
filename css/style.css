@@ -33,10 +33,10 @@ a:hover{
     position:relative;
 }
 .linkFixed i{
-    font-size:2em;
+    font-size:1.8em;
     padding:20px 0px;
     
-    color:#ABB7B7;
+    color:#BDC3C7;
 }
 
 .linkFixed i:hover{
@@ -48,7 +48,7 @@ a:hover{
     right:40px;
     background-color:rgba(255,255,255,0.9);
     width:150px;
-    height:60px;
+    height:55px;
     padding-top:15px;
     border-radius: 5px 0px 0px 5px;
 }
@@ -58,7 +58,7 @@ a:hover{
 }
 .socials i{
     padding-top: 0px;
-    font-size:1.8em;
+    font-size:1.6em;
 }
 .socials i:nth-of-type(2){
     padding: 0px 15px;
@@ -436,6 +436,11 @@ footer{
 #naslovProizvodi span{
     font-size:1.2em;
 }
+#proizvodiPrikaz,#blogPrikaz{
+    border-left:2px solid #BDC3C7;
+    
+    padding-left: 50px;
+}
 /* main */
 main{
  
@@ -484,15 +489,17 @@ main{
     font-weight: bold;
 }
 .cena i{
-    background: #ababab;
+     /* background: #ababab; */
     display: block;
     width: 35px;
     height: 35px;
-    border-radius: 50%;
-    padding: 8px;
-    color:#fff;
+    /* border-radius: 50%; */
+    padding: 7px;
+    color:#000;
     transition:0.2s ease-in;
+    border:2px solid goldenrod;
 }
+
 .cena i:hover{
     background: goldenrod;
 }
@@ -535,9 +542,9 @@ main{
 /* STRANICA BLOGc */
 @media screen and (max-width: 1024px) {
     #navigacijaLinkovi{
-        position:absolute;
-        right:10px;
-        top:80px;
+        /* position:absolute; */
+        /* right:10px;
+        top:80px; */
      
         
     }
@@ -545,7 +552,7 @@ main{
        
         font-size:17px;
         
-        display:block;
+        /*  display:block;*/
         
         
     }
@@ -599,12 +606,13 @@ main{
 
   @media screen and (max-width: 768px) {
     #navigacijaLinkovi{
-        position:absolute;
-        right:-10px;
-        top:80px;
-     
+        z-index:200; 
+    }
+    #navigacijaLinkovi li{
+        z-index:200;
         
     }
+    
     #subscription {
         height: 400px;
     }
@@ -625,30 +633,104 @@ main{
     
   }
   @media screen and (max-width: 576px) {
-    /* popout */
+      /* poput */
+      #linkoviFixed {
+        z-index: 101;
+        position: fixed;
+        top: 60%;
+        right: 0px;
+        background-color: rgba(255,255,255,0.9);
+        border-radius: 5px;
+        padding: 5px 5px;
+        box-shadow: -10px 0px 20px 2px rgba(0,0,0,.06);
+    }
+    .linkFixed i {
+        font-size: 1.4em;
+        padding: 10px 0px;
+        
+    }
+    .prelazakMisem {
+        position: absolute;
+        top: 0px;
+        right: 25px;
+        background-color: rgba(255,255,255,0.9);
+        width: 150px;
+        height: 40px;
+        padding-top: 5px;
+        border-radius: 5px 0px 0px 5px;
+    }
+  
+    .socials i{
+        padding-top: 5px;
+        font-size:1.4em;
+    }
+    .socials i:nth-of-type(2){
+        padding:0px 20px;
+    }
+    /* end of poput */
 
-
-    /* end popuot */
-    
-    
+    /* navigacija */
+    #navigacija ul li{
+        width:100px;
+        margin-right: 20px;
+        display:block!important;
+        top:0px;
+        left:0px;
+       margin-left: auto;
+    }
+    #logo{
+        left:-20px;
+        top:-5px;
+    }
     #logo img{
         width:90px;
         margin-top: 10px;
     }
-    #searchNav input,#searchNav i{
-        display:none;
-    }
+
     #hamburger {
         position: absolute;
-        top: 20px;
+        top: 15px;
         right: -10px;
     }
+    
+    #navigacijaPromenaBojeMaliEkran{
+        margin-left:0px!important;
+        background-color:rgba(0,0,0,0.75);
+    }
+  
+ 
     #navigacijaLinkovi{
         right:-30px;
-        top:60px;
-     
-        
+        top:28px;
+       
+        margin-top:20px;
+        background-color:rgba(0,0,0,0.75);
+        width:140%;
+      text-align: right;
+      padding-bottom: 20px;
     }
+
+    #navigacijaLinkovi li a{
+        color:#fff;
+    }
+    /* end of navigacija */
+
+    #naslovProizvodi h1 {
+        font-size: 2.2em;
+        /* margin-left: 100px; */
+        margin-top: 40px;
+    }
+  
+/* ABOUT */
+#about {
+    background: #f9f9f9;
+    padding: 0px 0px 50px 0px;
+}
+#transport {
+    padding: 40px 0px;
+    
+}
+/* END OF ABOUT */
     .responsiveDugme{
         width: 300px;
         z-index:105;
@@ -688,44 +770,20 @@ main{
     .fooCopy {
         padding-top: 50px;
     }
+    .mapa iframe {
+        height: 200px;
+        width: 70%;
+    }
+    .searchDiv, #sortiranje {
+        width: 150px;
+    }
+    main {
+        padding: 40px 0px;
+    }
 }
 @media screen and (max-width: 400px){
-    /* poput */
-    #linkoviFixed {
-        z-index: 101;
-        position: fixed;
-        top: 50%;
-        right: 0px;
-        background-color: rgba(255,255,255,0.9);
-        border-radius: 5px;
-        padding: 5px 5px;
-        box-shadow: -10px 0px 20px 2px rgba(0,0,0,.06);
-    }
-    .linkFixed i {
-        font-size: 1.4em;
-        padding: 10px 0px;
-        
-    }
-    .prelazakMisem {
-        position: absolute;
-        top: 0px;
-        right: 25px;
-        background-color: rgba(255,255,255,0.9);
-        width: 150px;
-        height: 40px;
-        padding-top: 5px;
-        border-radius: 5px 0px 0px 5px;
-    }
   
-    .socials i{
-        padding-top: 5px;
-        font-size:1.4em;
-    }
-    .socials i:nth-of-type(2){
-        padding:0px 20px;
-    }
-    /* end of poput */
-
+  
 
     #blog p:nth-of-type(2) {
         width: 300px;
