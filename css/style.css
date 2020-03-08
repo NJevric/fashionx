@@ -24,7 +24,7 @@ a:hover{
     right:10px;
     background-color:rgba(255,255,255,0.9);
     border-radius: 5px;
-    padding:10px 10px;
+    padding:10px 15px;
     box-shadow: -10px 0px 20px 2px rgba(0,0,0,.06);
 
 }
@@ -33,7 +33,7 @@ a:hover{
     position:relative;
 }
 .linkFixed i{
-    font-size:1.8em;
+    font-size:1.5em;
     padding:20px 0px;
     
     color:#BDC3C7;
@@ -44,7 +44,7 @@ a:hover{
 }
 .prelazakMisem{
     position: absolute;
-    top:10px;
+    top:5px;
     right:40px;
     background-color:rgba(255,255,255,0.9);
     width:150px;
@@ -534,27 +534,36 @@ main{
 /* kraj logo kompanija */
 /* KRAJ STRANICE MUSKE ODECE */
 
-/* STRANICA BLOG */
-
-
-
-
-/* STRANICA BLOGc */
+/* STRANICA KONTAKT */
+#kontaktForma input,#kontaktForma textarea{
+    border-radius: 0px;
+}
+textarea{
+    resize:none;
+}
+#btnSubmit{
+    margin-top: 15px;
+    background-color: #C93756;
+    color: #fff;
+    border: 0px;
+    width:200px;
+    padding:10px 0px;
+}
+.infoTekstContact{
+    width: 350px;
+    letter-spacing: .1px;
+    line-height: 1.7;
+    font-size:1.1em;
+}
+.contactIkone strong{
+    font-size:1.2em;
+}
+/* STRANICA KONTAKT */
 @media screen and (max-width: 1024px) {
-    #navigacijaLinkovi{
-        /* position:absolute; */
-        /* right:10px;
-        top:80px; */
-     
-        
-    }
+
     #navigacija ul li{
        
         font-size:17px;
-        
-        /*  display:block;*/
-        
-        
     }
     #naslov h1 {
         font-size: 2.5em;
@@ -786,8 +795,16 @@ main{
     }
 }
 @media screen and (max-width: 400px){
-  
-  
+    #naslovProizvodi p {
+        font-size: 1.1em;
+        margin-top: 10px;
+    }
+    #btnSubmit{
+        width:150px; 
+    }
+    .infoTekstContact{
+        width: 250px;
+    }
 
     #blog p:nth-of-type(2) {
         width: 300px;
