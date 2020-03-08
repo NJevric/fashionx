@@ -776,9 +776,17 @@ textarea{
     .onamaTekst p{
         font-size:0.95em;
     }
-    .onamaTekst h2 {
+    .onamaTekst h2,.blogNaslov h2 {
         font-size: 2.2em;
     }
+    #transport h3 {
+        text-transform: uppercase;
+        font-size: 1.3em;
+    }
+    #blog{
+        padding:40px 0px;
+    }
+    
     #blog p:nth-of-type(2) {
         width: 350px;
         font-size: 0.95em;
