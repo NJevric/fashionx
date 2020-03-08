@@ -420,6 +420,7 @@ footer{
 /* KRAJ FOOTERA */
 
 /* STRANICA MUSKE ODECE */
+
 #headerProizvodi{
     height:40vh;
 }
@@ -438,9 +439,48 @@ footer{
 }
 #proizvodiPrikaz,#blogPrikaz{
     border-left:2px solid #BDC3C7;
-    
     padding-left: 50px;
 }
+.selectBox {
+    position: relative;
+    width:250px;
+  }
+  
+  .selectBox select {
+    width: 100%;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    padding:6px 0px;
+  }
+  
+  .sakrijOption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  /* OVER SLUZI DA SAKRIJE SELECT NA OPTION KADA SE KLIKNE NA SELECT */
+
+  #chbs {
+    display: none;
+    border: 1px #dadada solid;
+    transition: 0.5s ease;
+    width:250px;
+
+  }
+ 
+  #chbs label {
+    display: block;
+    padding:3px 0px;
+    padding-left: 10px;
+    color: #495057;
+  }
+
+  #chbs label:hover {
+    background-color: #1e90ff;
+    color:#fff;
+  }
 /* main */
 main{
  
@@ -535,6 +575,9 @@ main{
 /* KRAJ STRANICE MUSKE ODECE */
 
 /* STRANICA KONTAKT */
+#kontakt{
+    padding:0px;
+}
 #kontaktForma input,#kontaktForma textarea{
     border-radius: 0px;
 }
@@ -554,7 +597,10 @@ textarea{
     letter-spacing: .1px;
     line-height: 1.7;
     font-size:1.1em;
+   
 }
+
+
 .contactIkone strong{
     font-size:1.2em;
 }
@@ -645,6 +691,7 @@ textarea{
     #proizvodiPrikaz, #blogPrikaz {
         margin:0px auto;
         padding-left: 0px;
+       
     }
       /* poput */
       #linkoviFixed {
@@ -798,16 +845,14 @@ textarea{
         height: 200px;
         width: 70%;
     }
-    .searchDiv, #sortiranje {
-        width: 150px;
-    }
+    
     main {
         padding: 40px 0px;
     }
 }
 @media screen and (max-width: 400px){
     #naslovProizvodi p {
-        font-size: 1.1em;
+        font-size: 1.05em;
         margin-top: 10px;
     }
     #btnSubmit{
@@ -838,3 +883,6 @@ textarea{
        z-index:101;
     }
 }
+
+
+  

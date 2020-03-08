@@ -25,6 +25,7 @@
                 
                 
                 <ul id="navigacijaLinkovi">
+                    <li><i class="fas fa-shopping-cart"></i></li>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="man.html">Man</a></li>
                     <li><a href="woman.html">Woman</a></li>
@@ -50,7 +51,7 @@
        
         <div class="container mx-auto">
             <div class="row">
-                <div class="col-lg-3 col-5">
+                <div class="col-lg-3 col-10 mb-2">
                     <form action="#">
                 
                         <div class="input-group mb-3 searchDiv">
@@ -62,7 +63,7 @@
                    </form>
             
                 </div>
-                <div class="col-lg-9 mb-5 col-5">
+                <div class="col-lg-9 mb-3 mb-md-5 col-10">
                     <form action="#">
                         <select class="form-control" id="sortiranje">
                             
@@ -72,13 +73,23 @@
             </div>
            <div class="row">
             <div class="col-lg-3">
-               <form action="#" id="filtriranje" class="mt-5">
+                <form>
                 
-               </form>
+                    <div class="selectBox" onclick="prikaziChbZaFilter()">
+                      <select>
+                        <option>Select an option</option>
+                      </select>
+                      <div class="sakrijOption"></div>
+                    </div>
+                    <div id="chbs">
+  
+                    </div>
+               
+                </form>
              
             </div>
 
-            <div class="col-lg-9 row col-12" id="proizvodiPrikaz">
+            <div class="col-lg-9 row col-12 mt-5 mt-md-0" id="proizvodiPrikaz">
                 
                     <!-- <div class="col-lg-4 proizvod">
                         <img src="img/proizvod.jpg" class="img-fluid mb-3"/>

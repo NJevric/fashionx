@@ -12,7 +12,12 @@ window.onload=function(){
     //         stil.style.backgroundColor="rgba(0,0,0,0.75)";
     //     })
     // }
+
 }
+
+
+ 
+
 // ZA SVE STRANICE
 $(window).on("load",function(){
     $("#naslov").animate({opacity:'1'},2500);
@@ -98,6 +103,7 @@ $(document).ready(function () {
 
 //MAN STRANA
 if(url.indexOf("man.html")!=-1){
+
 function prikaziSveProizvode(){
     $.ajax({
         url: "data/proizvodi.json",
@@ -227,6 +233,18 @@ function sortiraj(){
         } 
     });
 }
+var expanded = false;
+
+function prikaziChbZaFilter() {
+  var checkboxes = document.getElementById("chbs");
+  if (!expanded) {
+    checkboxes.style.display = "block";
+    expanded = true;
+  } else {
+    checkboxes.style.display = "none";
+    expanded = false;
+  }
+}
 function ispisSelectFilter(){
     $.ajax({
         url: "data/filterNaslov.json",
@@ -235,15 +253,16 @@ function ispisSelectFilter(){
         success: function (data) {
             let ispis="";
             data.muski.forEach(i => {
-                ispis+=`<div class="form-check" id="filtriraj">
+                ispis+=`
 
-                <input type="checkbox" class="form-check-input tipovi" value="${i.naziv}">
-                <label class="form-check-label ml-3" for="${i.id}">${i.naziv}</label>
-
-                <hr/>
-            </div>`
+               
+                <label for="${i.id}">
+                      <input type="checkbox" class="mr-2" id="${i.naziv}" />${i.naziv}
+                </label>
+                
+            `
             });
-            document.getElementById("filtriranje").innerHTML=ispis;
+            document.getElementById("chbs").innerHTML=ispis;
             
             
             let tipovi=document.getElementsByClassName("tipovi");
@@ -323,6 +342,18 @@ function filterKategorija(){
 
 //WOMAN STRANA
 if(url.indexOf("woman.html")!=-1){
+    var expanded = false;
+
+function prikaziChbZaFilter() {
+  var checkboxes = document.getElementById("chbs");
+  if (!expanded) {
+    checkboxes.style.display = "block";
+    expanded = true;
+  } else {
+    checkboxes.style.display = "none";
+    expanded = false;
+  }
+}
     function prikaziSveProizvode(){
         $.ajax({
             url: "data/proizvodi.json",
@@ -421,13 +452,11 @@ if(url.indexOf("woman.html")!=-1){
             success: function (data) {
                 let ispis="";
                 data.zenski.forEach(i => {
-                    ispis+=`<div class="form-check" id="filtriraj">
-                    <input type="checkbox" class="form-check-input tipovi" value="${i.naziv}">
-                    <label class="form-check-label ml-3" for="${i.id}">${i.naziv}</label>
-                    <hr/>
-                </div>`
+                    ispis+=`<label for="${i.id}">
+                    <input type="checkbox" class="mr-2" id="${i.naziv}" />${i.naziv}
+              </label>`
                 });
-                document.getElementById("filtriranje").innerHTML=ispis;
+                document.getElementById("chbs").innerHTML=ispis;
                 
                 
                 let tipovi=document.getElementsByClassName("tipovi");
