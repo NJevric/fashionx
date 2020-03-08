@@ -600,7 +600,9 @@ textarea{
    
 }
 
-
+.slikaKontakt{
+    background:url('../img/kontakt1.jpg');
+}
 .contactIkone strong{
     font-size:1.2em;
 }
