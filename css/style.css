@@ -714,7 +714,7 @@ textarea{
  
     #navigacijaLinkovi{
         right:-30px;
-        top:27px;
+        top:27.5px;
        
         margin-top:20px;
         background-color:rgba(0,0,0,0.75);
@@ -776,6 +776,9 @@ textarea{
     .onamaTekst p{
         font-size:0.95em;
     }
+    .onamaTekst h2 {
+        font-size: 2.2em;
+    }
     #blog p:nth-of-type(2) {
         width: 350px;
         font-size: 0.95em;
@@ -807,7 +810,8 @@ textarea{
     }
 
     #blog p:nth-of-type(2) {
-        width: 300px;
+        width: 270px;
+        font-size:0.95em;
     }
     .subTekst h2 {
         font-size: 2.5em;
