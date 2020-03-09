@@ -12,13 +12,32 @@ window.onload=function(){
     //         stil.style.backgroundColor="rgba(0,0,0,0.75)";
     //     })
     // }
-
+    
 }
 
-
- 
-
 // ZA SVE STRANICE
+function ispisiNavigaciju(){
+    $.ajax({
+        url: "data/menu.json",
+        method: "get",
+        dataType: "json",
+        success: function (data) {
+           
+            let ispis=`<li><a href=""><i class="fas fa-shopping-cart"></i></a></li>`;
+            for(let i of data){
+                ispis+=`
+                <li><a href="${i.href}">${i.tekst}</a></li>`
+
+            }
+            console.log(data);
+            document.getElementById("navigacijaLinkovi").innerHTML=ispis;
+        },
+        error:function(xhr){
+            console.log(xhr);
+        } 
+    });
+}
+ispisiNavigaciju();
 $(window).on("load",function(){
     $("#naslov").animate({opacity:'1'},2500);
     $("#logo").animate({opacity:'1'},2000);
@@ -56,21 +75,6 @@ function prikaziInstagram(){
 //INDEX STRANA
 if(url.indexOf("index.html")!=-1){
 
-// function hoverIn(){
-//     let stil=document.getElementsByClassName("dugmeNaslov");
-//     stil.style.backgroundColor="goldenrod";
-//     stil.style.color= "#fff";
-// }
-// function hoverOut(){
-//     let stil=document.getElementsByClassName("dugmeNaslov");
-//     stil.style.backgroundColor= "transparent";
-//     stil.style.color= "#000";
-// }
-// var klase=document.getElementsByClassName("dugmeNaslov");
-// for(let i of klase){
-//     document.i.addEventListener("mouseover",hoverIn);
-//     document.i.addEventListener("mouseout",hoverOut);
-// }
 $(document).ready(function () {
 
     $(".socials").hide();
@@ -474,6 +478,7 @@ function prikaziChbZaFilter() {
     }
 }
 
+// BLOG STRANA
 if(url.indexOf("blog.html")!=-1){
     function ispisiSveBlogove(){
         $.ajax({
@@ -536,6 +541,13 @@ if(url.indexOf("blog.html")!=-1){
     
     }
   
+}
+
+
+// KONTAKT STRANA
+
+if(url.indexOf("contact.html")!=-1){
+
 }
 
 
