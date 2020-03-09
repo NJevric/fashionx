@@ -1,4 +1,5 @@
 var url=location.href;
+var urlBezIndex=location.pathname;
 window.onload=function(){
     prikaziInstagram();
     navigacija();
@@ -73,7 +74,7 @@ function prikaziInstagram(){
     
 }
 //INDEX STRANA
-if(url.indexOf("/index.html")!=-1){
+if(url.indexOf("index.html")!=-1 || urlBezIndex.indexOf("wp2sajt")!=-1){
 
 $(document).ready(function () {
 
