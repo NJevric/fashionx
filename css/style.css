@@ -605,7 +605,10 @@ textarea{
     font-size:1.1em;
    
 }
-
+#greskaKontakt ul li{
+    list-style-type: none;
+    font-weight: bold;
+}
 .slikaKontakt{
     background:url('../img/kontakt1.jpg');
 }

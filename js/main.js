@@ -576,26 +576,46 @@ if(url.indexOf("contact.html")!=-1){
         let prezime=document.getElementById("prezime").value;
         let email=document.getElementById("email").value;
         let comment=document.getElementById("comment").value;
-        let greska=document.getElementsByClassName("greskaKontakt");
 
         let regIme=/^[A-Z][a-z]{2,15}$/;
         let regPrezime=/^[A-Z][a-z]{2,15}$/;
         let regEmail=/^\w+((\,|\-|\_)?\w+)*@\w{2,6}\.\w{2,3}$/;
-
+        let greske =[];
        if(!ime.match(regIme)){
-           greska[0].innerHTML="Wrong name input";
-           return false;
+            // greska[0].innerHTML="Wrong name input";
+            greske.push("Wrong name input");
+           
+        //    return false;
        }
        if(!prezime.match(regPrezime)){
-            greska[1].innerHTML="Wrong surname input";
-            return false;
+            // greska[1].innerHTML="Wrong surname input";
+            greske.push('Wrong surname input');
+           
+            // return false;
        }
        if(!email.match(regEmail)){
-        greska[2].innerHTML="Wrong email input";
-        return false;
+            // greska[2].innerHTML="Wrong email input";
+            greske.push('Wrong email input');
+           
+            // return false;
         }
-        if(comment.length>200){
-            greska[3].innerHTML="More then 200 characters";
+        if(comment.length>200 || comment.length<3){
+            // greska[3].innerHTML="More then 200 characters";
+            greske.push('More then 200 characters');
+           
+            // return false;
+        } 
+        if(greske.length){
+            ispis="<ul>";
+            // greske.forEach(greska => {
+            //     ispis+=`<li>${greska}</li>`;
+
+            // });
+            for(let i of greske){
+                ispis+=`<li>${i}</li>`;
+            }
+            ispis+="</ul>"
+            document.getElementById("greskaKontakt").innerHTML=ispis;
             return false;
         }
        else{
