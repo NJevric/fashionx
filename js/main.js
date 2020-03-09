@@ -3,9 +3,9 @@ window.onload=function(){
     prikaziInstagram();
     navigacija();
     
-    ispisiSelectSort();
-    document.getElementById("sortiranje").addEventListener("change",sortiraj);
-    this.ispisSelectFilter();
+    
+    
+    
     // if(this.screen.width<400){
     //     document.getElementById("hamburger").addEventListener("click",function(){
     //         let stil=document.getElementById("navigacijaPromenaBojeMaliEkran");
@@ -102,12 +102,32 @@ $(document).ready(function () {
     });
 
 });
+
+function proveraSubscribe(){
+    let emailSub=document.getElementById("emailSubscribe").value;
+    let formaSub=document.getElementById("subForm");
+    let regEmail=/^\w+((\,|\-|\_)?\w+)*@\w{2,6}\.\w{2,3}$/;
+
+    if(!emailSub.match(regEmail)){
+        document.getElementById("greskaSub").innerHTML="Wrong email format input<br/>Refresh the page and write an email in correct format";
+        formaSub.reset();
+        return false;
+    }
+    else{
+        emailSub.value="";
+        alert("You have successfully subscribe to our email subscription sale");
+        formaSub.reset();
+        return true;
+    }
+   
+}
 }
 
 
 //MAN STRANA
 if(url.indexOf("man.html")!=-1){
-
+    ispisiSelectSort();
+    document.getElementById("sortiranje").addEventListener("change",sortiraj);
 function prikaziSveProizvode(){
     $.ajax({
         url: "data/proizvodi.json",
@@ -249,6 +269,7 @@ function prikaziChbZaFilter() {
     expanded = false;
   }
 }
+ispisSelectFilter();
 function ispisSelectFilter(){
     $.ajax({
         url: "data/filterNaslov.json",
@@ -347,7 +368,7 @@ function filterKategorija(){
 //WOMAN STRANA
 if(url.indexOf("woman.html")!=-1){
     var expanded = false;
-
+    document.getElementById("sortiranje").addEventListener("change",sortiraj);
 function prikaziChbZaFilter() {
   var checkboxes = document.getElementById("chbs");
   if (!expanded) {
@@ -448,6 +469,7 @@ function prikaziChbZaFilter() {
         });
     
     }
+    ispisSelectFilter();
     function ispisSelectFilter(){
         $.ajax({
             url: "data/filterNaslov.json",
@@ -547,6 +569,42 @@ if(url.indexOf("blog.html")!=-1){
 // KONTAKT STRANA
 
 if(url.indexOf("contact.html")!=-1){
+
+    function proveraKontaktForma(){
+        let ime=document.getElementById("ime").value;
+        let prezime=document.getElementById("prezime").value;
+        let email=document.getElementById("email").value;
+        let comment=document.getElementById("comment").value;
+        let greska=document.getElementsByClassName("greskaKontakt");
+
+        let regIme=/^[A-Z][a-z]{2,15}$/;
+        let regPrezime=/^[A-Z][a-z]{2,15}$/;
+        let regEmail=/^\w+((\,|\-|\_)?\w+)*@\w{2,6}\.\w{2,3}$/;
+
+       if(!ime.match(regIme)){
+           greska[0].innerHTML="Wrong name input";
+           return false;
+       }
+       if(!prezime.match(regPrezime)){
+            greska[1].innerHTML="Wrong surname input";
+            return false;
+       }
+       if(!email.match(regEmail)){
+        greska[2].innerHTML="Wrong email input";
+        return false;
+        }
+        if(comment.length>200){
+            greska[3].innerHTML="More then 200 characters";
+            return false;
+        }
+       else{
+           alert("You successfully sent us a message");
+           return true;
+       }
+    }
+
+ 
+
 
 }
 
