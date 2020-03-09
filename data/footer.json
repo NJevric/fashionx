@@ -1,0 +1,57 @@
+[
+    {
+        "naslovPay":"Payment method",
+        "tekstPay":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
+        "ikonePay":[
+            {
+                "klasa":"fab fa-cc-visa"
+            },
+            {
+                "klasa": "fab fa-cc-paypal"
+            },
+            {
+                "klasa":"fab fa-cc-mastercard"
+            }
+            
+           
+        ],
+        "secureIkona":"fas fa-lock mt-1 mr-2",
+        "secureTekst":"Secure online payment",
+        "linkoviNaslov":"Our Links",
+        "linkoviTekst":[
+            {
+                "href":"index.html",
+                "tekst":"Home"
+            },
+            {
+                "href":"man.html",
+                "tekst":"Man"
+            },
+            {
+                "href":"woman.html",
+                "tekst":"Woman"
+            },
+            {
+                "href":"blog.html",
+                "tekst":"Blog"
+            },
+            {
+                "href":"contact.html",
+                "tekst":"Contact"
+            }
+        ],
+        "vremeNaslov":"Working Hours",
+        "vremeTekst":[
+            {
+                "tekst":"Monday-Friday",
+                "vreme":"08:00h-22:00h"
+            },
+            {
+                "tekst":"Saturday-Sunday",
+                "vreme":"10:00h-22:00h"
+            }
+        ],
+        "mapa":"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d45291.072255486346!2d20.37819575!3d44.8074649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ssr!2srs!4v1582110255753!5m2!1ssr!2srs",
+        "copy":"Copyright 2020  Nikola Jevric 78/18"
+    }
+]
