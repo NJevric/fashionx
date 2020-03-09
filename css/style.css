@@ -740,7 +740,7 @@ textarea{
     /* navigacija */
     #navigacija ul li{
         width:100px;
-        margin-right: 20px;
+        /* margin-right: 20px; */
         display:block!important;
         top:0px;
         left:0px;
@@ -768,7 +768,7 @@ textarea{
   
  
     #navigacijaLinkovi{
-        right:-30px;
+        right:-15px;
         top:27.5px;
        
         margin-top:20px;
@@ -892,5 +892,9 @@ textarea{
     }
 }
 
-
+@media screen and (max-width: 350px){
+    .responsiveDugme, .tekstNaslov,#naslov h1,.subTekst h2,.placanje p:nth-of-type(1){
+        width:280px;
+    }
+}
   
