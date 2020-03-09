@@ -3,7 +3,7 @@ var urlBezIndex=location.pathname;
 window.onload=function(){
     prikaziInstagram();
     navigacija();
-    
+    prikaziFooter();
     
     
     
@@ -17,6 +17,85 @@ window.onload=function(){
 }
 
 // ZA SVE STRANICE
+function prikaziFooter(){
+    $.ajax({
+        url: "data/footer.json",
+        method: 'get',
+        type:"json",
+        success: function (data) {
+           console.log(data);
+        //    ISPIS PRVOG BLOKA OD 3 U NIZU
+           let ispisPay="";
+           for(let i of data){
+               
+             ispisPay+=`<h3>${i.naslovPay}</h3>
+             <p>${i.tekstPay}</p>`
+           }
+           ispisPay+=`<div class="kartice d-flex" id="prikaziPayIkone">`
+           document.getElementById("prikaziPay").innerHTML=ispisPay;
+
+           let ispisPayIkone="";
+           for(let i of data){
+                i.ikonePay.forEach( ikona => {
+                ispisPayIkone += `<i class="${ikona.klasa}"></i>`;
+                });
+           }
+            ispisPayIkone+=`</div>`
+            document.getElementById("prikaziPayIkone").innerHTML=ispisPayIkone;
+
+            let ispisSecure=`<div class="secure d-flex mt-3">`;
+            
+            for(let i of data){
+                ispisSecure+=`<i class="${i.secureIkona}"></i>
+                <p>${i.secureTekst}</p>`;
+            }
+            ispisSecure+=`</div>`
+            document.getElementById("prikaziPay").innerHTML+=ispisSecure;
+
+            // ISPIS DRUGOG BLOKA OD 3 U NIZU
+            let ispisLinkova="";
+            for(let i of data){
+                ispisLinkova+=` <h3>${i.linkoviNaslov}</h3>`;
+                i.linkoviTekst.forEach(link => {
+                    ispisLinkova+=`<p><a href="${link.href}">${link.tekst}</a></p>`;
+                });
+            }
+            document.getElementById("ispisLinkova").innerHTML=ispisLinkova;
+
+            // ISPIS TRECEG BLOKA OD 3 U NIZU
+
+            let ispisRadnogVremena="";
+            for(let i of data){
+                ispisRadnogVremena+=`<h3>${i.vremeNaslov}</h3>`;
+                i.vremeTekst.forEach(element => {
+                    ispisRadnogVremena+=`<p>${element.tekst}</p>
+                    <p>${element.vreme}</p>`
+                });
+            }
+            document.getElementById("radnoVreme").innerHTML=ispisRadnogVremena;
+
+            // ISPIS MAPE
+
+            let ispisMapa="";
+            for(let i of data){
+                ispisMapa+=`<iframe src="${i.mapa}" frameborder="0" style="border:0;" allowfullscreen=""></iframe>`
+            }
+            document.getElementById("mapaIspis").innerHTML=ispisMapa;
+
+            // ISPIS COPYRIGHT
+            let ispisCopy=`<div class="col-lg-12 text-center">`;
+            for(let i of data){
+                ispisCopy+=`<p>&copy; ${i.copy}</p>`
+            }
+            ispisCopy+=`</div>`
+            document.getElementById("ispisCopy").innerHTML=ispisCopy;
+            },
+        error(xhr){
+            console.log(xhr);
+        } 
+    });
+    
+}
 function ispisiNavigaciju(){
     $.ajax({
         url: "data/menu.json",
