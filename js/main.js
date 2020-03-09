@@ -4,16 +4,7 @@ window.onload=function(){
     prikaziInstagram();
     navigacija();
     prikaziFooter();
-    
-    
-    
-    // if(this.screen.width<400){
-    //     document.getElementById("hamburger").addEventListener("click",function(){
-    //         let stil=document.getElementById("navigacijaPromenaBojeMaliEkran");
-    //         stil.style.backgroundColor="rgba(0,0,0,0.75)";
-    //     })
-    // }
-    
+
 }
 
 // ZA SVE STRANICE
@@ -219,6 +210,9 @@ function prikaziSveProizvode(){
             document.getElementById("searchInput").addEventListener("keyup",function(){
                 String(this.value)? filtrirajInput(this.value) : prikaziSveProizvode();
            });
+           
+         
+    
 
         },
         error:function(xhr){
@@ -337,7 +331,7 @@ function sortiraj(){
         } 
     });
 }
-var expanded = false;
+let expanded = false;
 
 function prikaziChbZaFilter() {
   var checkboxes = document.getElementById("chbs");
@@ -362,7 +356,7 @@ function ispisSelectFilter(){
 
                
                 <label for="${i.id}">
-                      <input type="checkbox" class="mr-2" id="${i.naziv}" />${i.naziv}
+                      <input type="checkbox" name="chb" class="mr-2" id="${i.naziv}" value="${i.naziv}" class="tipovi"/>${i.naziv}
                 </label>
                 
             `
@@ -370,10 +364,10 @@ function ispisSelectFilter(){
             document.getElementById("chbs").innerHTML=ispis;
             
             
-            let tipovi=document.getElementsByClassName("tipovi");
+            let tipovi=document.getElementsByName("chb");
             for(let i of tipovi){
                 
-                i.addEventListener("click",filterKategorija);
+                i.addEventListener("change",filterKategorija);
             }
           
 
@@ -383,66 +377,45 @@ function ispisSelectFilter(){
         } 
     });
 }
+
+
 var niz=[];
 function filterKategorija(){
-    let vrednost = this.value;
-    if(niz.includes(vrednost)){
+    let cekirano = this.value;
+    if(niz.includes(cekirano)){
         niz=niz.filter(x=>{
-            return x!=vrednost;
+            return x!=cekirano;
         })
     }
     else{
-        niz.push(vrednost);
+        niz.push(cekirano);
     }
     $.ajax({
         url:"data/proizvodi.json",
-        method:"post",
+        method:"get",
         dataType:"json",
         success:function(data){
-           
-                let djoka=data.muski.filter(x=>{
-                    if(niz.length!=0){
+                let filtrirano=data.muski.filter(x=>{
+                if(niz.length!=0){
                     for(let i=0; i<niz.length; i++){
                         if(niz[i]==x.naslov)
                             return true;
-                            else{
-                                return true;
-                            }
-                    }
+                        
+                    } 
                     
                 }
+                else{
+                    return true;
+                }
             })
-            console.log(djoka);
-            ispisProizvodaFilter(djoka);
+            console.log(filtrirano);
+            ispisProizvodaFilter(filtrirano);
             console.log(niz);
           
         }
     })
 }
-// var slideIndex = 1;
-// showSlides(slideIndex);
 
-// function plusSlides(n) {
-//   showSlides(slideIndex += n);
-// }
-
-// function currentSlide(n) {
-//   showSlides(slideIndex = n);
-// }
-
-// function showSlides(n) {
-//   var i;
-//   var slides = document.getElementsByClassName("mySlides");
-  
-//   if (n > slides.length) {slideIndex = 1}    
-//   if (n < 1) {slideIndex = slides.length}
-//   for (i = 1; i < slides.length; i++) {
-//       slides[i].style.display = "none";  
-//   }
- 
-//   slides[slideIndex-1].style.display = "block";  
-  
-// }
 }
 
 //WOMAN STRANA
@@ -558,18 +531,18 @@ function prikaziChbZaFilter() {
             success: function (data) {
                 let ispis="";
                 data.zenski.forEach(i => {
-                    ispis+=`<label for="${i.id}">
-                    <input type="checkbox" class="mr-2" id="${i.naziv}" />${i.naziv}
+                    ispis+=`  <label for="${i.id}">
+                    <input type="checkbox" name="chb" class="mr-2" id="${i.naziv}" value="${i.naziv}" class="tipovi"/>${i.naziv}
               </label>`
                 });
                 document.getElementById("chbs").innerHTML=ispis;
                 
                 
-                let tipovi=document.getElementsByClassName("tipovi");
-                for(let i of tipovi){
-                    
-                    i.addEventListener("click",filterKategorija);
-                }
+                let tipovi=document.getElementsByName("chb");
+            for(let i of tipovi){
+                
+                i.addEventListener("change",filterKategorija);
+            }
               
     
             },
@@ -578,6 +551,43 @@ function prikaziChbZaFilter() {
             } 
         });
     }
+    
+var niz=[];
+function filterKategorija(){
+    let cekirano = this.value;
+    if(niz.includes(cekirano)){
+        niz=niz.filter(x=>{
+            return x!=cekirano;
+        })
+    }
+    else{
+        niz.push(cekirano);
+    }
+    $.ajax({
+        url:"data/proizvodi.json",
+        method:"get",
+        dataType:"json",
+        success:function(data){
+                let filtrirano=data.zenski.filter(x=>{
+                if(niz.length!=0){
+                    for(let i=0; i<niz.length; i++){
+                        if(niz[i]==x.naslov)
+                            return true;
+                        
+                    } 
+                    
+                }
+                else{
+                    return true;
+                }
+            })
+            console.log(filtrirano);
+            ispisProizvodaFilter(filtrirano);
+            console.log(niz);
+          
+        }
+    })
+}
 }
 
 // BLOG STRANA
