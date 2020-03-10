@@ -539,7 +539,7 @@ function prikaziChbZaFilter() {
                 
                 
                 let tipovi=document.getElementsByName("chb");
-            for(let i of tipovi){
+                for(let i of tipovi){
                 
                 i.addEventListener("change",filterKategorija);
             }
@@ -603,6 +603,13 @@ if(url.indexOf("blog.html")!=-1){
                 document.getElementById("searchInput").addEventListener("keyup",function(){
                     String(this.value)? filtrirajInput(this.value) : prikaziSveProizvode();
                });
+               document.getElementById("datum").addEventListener("change", filtrirajPoDatumu);
+
+            //    document.getElementById("sortiranje").addEventListener("change",function(){
+            //     Number(this.value) ? filtrirajPoKategoriji(this.value) : ispisiSveBlogove();
+            // })
+            document.getElementById("sortiranje").addEventListener("change", filtrirajPoKategoriji);
+
 
             },
             error:function(xhr){
@@ -623,7 +630,7 @@ if(url.indexOf("blog.html")!=-1){
                     <hr/>
                     <div class="d-flex">
                         <i class="fas fa-clipboard-list mt-1 mr-1"></i>
-                        <p id="dugmeBlog">${i.kategorija}</p>
+                        <p id="dugmeBlog">${i.kategorija.naziv}</p>
                         <i class="far fa-comment ml-auto mt-1 mr-2"></i>
                         <p>${i.komentari.length}</p>
                     </div>
@@ -632,7 +639,7 @@ if(url.indexOf("blog.html")!=-1){
         document.getElementById("blogPrikaz").innerHTML=ispis;
     }
     ispisiSveBlogove();
-
+    ispisOptionTagKategorija();
     function filtrirajInput(text){
     
         $.ajax({
@@ -652,9 +659,69 @@ if(url.indexOf("blog.html")!=-1){
         });
     
     }
-  
+    function ispisOptionTagKategorija(){
+        
+        $.ajax({
+            url: "data/filterBlogKategorija.json",
+            method: "get",
+            dataType: "json",
+            success: function (data) {
+               let ispis="<option>Choose Chategory</option>";
+               for(let i of data){
+                   
+                    ispis+=`<option value="${i.id}" id="klik">${i.naziv}</option>`
+                   
+               
+               } 
+               document.getElementById("sortiranje").innerHTML=ispis;
+            
+                
+           
+            },
+            error:function(xhr){
+                console.log(xhr);
+            } 
+        });
+    }
+    
+    function filtrirajPoKategoriji(){
+        let izabranaKategorija=this.value;
+        $.ajax({
+            url: "data/blog.json",
+            method:"get",
+            dataType:"json",
+            success:function(data){
+                console.log("data");
+                let filtrirano = data.filter(x => {
+                    return izabranaKategorija == x.kategorija.id;
+                  });
+                ispisBlogova(filtrirano);  
+            },
+            error:function(xhr){
+                console.log(xhr);
+            }
+        });
+    }
+    function filtrirajPoDatumu() {
+        let izabranDatum = this.value;
+    
+        $.ajax({
+          url: 'data/blog.json',
+          method: 'GET',
+          dataType: 'json',
+          success: function (data) {
+            let filtrirano = data.filter(x => {
+              return izabranDatum == x.datum;
+            });
+    
+            ispisBlogova(filtrirano);
+          },
+          error: function (err) {
+            console.error(err);
+          }
+        });
+      }
 }
-
 
 // KONTAKT STRANA
 
@@ -665,50 +732,58 @@ if(url.indexOf("contact.html")!=-1){
         let prezime=document.getElementById("prezime").value;
         let email=document.getElementById("email").value;
         let comment=document.getElementById("comment").value;
+        let greska=document.getElementsByClassName("greskaKontakt");
+        let forma=document.getElementById("kontaktForma");
 
         let regIme=/^[A-Z][a-z]{2,15}$/;
         let regPrezime=/^[A-Z][a-z]{2,15}$/;
         let regEmail=/^\w+((\,|\-|\_)?\w+)*@\w{2,6}\.\w{2,3}$/;
         let greske =[];
        if(!ime.match(regIme)){
-            // greska[0].innerHTML="Wrong name input";
-            greske.push("Wrong name input");
-           
-        //    return false;
+            greska[0].innerHTML="Wrong name input *";
+            // greske.push("Wrong name input"); 
+            // return false;
+            greske.push("1");
        }
        if(!prezime.match(regPrezime)){
-            // greska[1].innerHTML="Wrong surname input";
-            greske.push('Wrong surname input');
-           
+            greska[1].innerHTML="Wrong surname input *";
+            // greske.push('Wrong surname input');
+            greske.push("2");
             // return false;
        }
        if(!email.match(regEmail)){
-            // greska[2].innerHTML="Wrong email input";
-            greske.push('Wrong email input');
-           
+            greska[2].innerHTML="Wrong email input *";
+            // greske.push('Wrong email input');
+            greske.push("3");
             // return false;
         }
-        if(comment.length>200 || comment.length<3){
-            // greska[3].innerHTML="More then 200 characters";
-            greske.push('More then 200 characters');
-           
+        if(comment.length<15){
+            greska[3].innerHTML="Min 15 characters *";
+        }
+        if(comment.length>200){
+            greska[4].innerHTML="Max 200 characters *";
+            // greske.push('More then 200 characters');
+            greske.push("4");
             // return false;
         } 
         if(greske.length){
-            ispis="<ul>";
-            // greske.forEach(greska => {
-            //     ispis+=`<li>${greska}</li>`;
+            // ispis=`<ul class="d-flex">`;
+            // // greske.forEach(greska => {
+            // //     ispis+=`<li>${greska}</li>`;
 
-            // });
-            for(let i of greske){
-                ispis+=`<li>${i}</li>`;
-            }
-            ispis+="</ul>"
-            document.getElementById("greskaKontakt").innerHTML=ispis;
+            // // });
+            // for(let i of greske){
+            //     ispis+=`<li class="mr-5 greska">${i}</li>`;
+            // }
+            // ispis+="</ul>"
+            // document.getElementById("greskaKontakt").innerHTML=ispis;
+           
             return false;
+            
         }
-       else{
+        else{
            alert("You successfully sent us a message");
+            forma.reset();
            return true;
        }
     }

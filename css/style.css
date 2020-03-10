@@ -492,7 +492,7 @@ main{
  
     padding:100px 0px;
 }
-.searchDiv,#sortiranje{
+.searchDiv,#sortiranje,#datum{
     width:250px;
 }
 
@@ -608,6 +608,7 @@ textarea{
 #greskaKontakt ul li{
     list-style-type: none;
     font-weight: bold;
+  
 }
 .slikaKontakt{
     background:url('../img/kontakt1.jpg');
@@ -615,6 +616,7 @@ textarea{
 .contactIkone strong{
     font-size:1.2em;
 }
+
 /* STRANICA KONTAKT */
 @media screen and (max-width: 1024px) {
 
@@ -892,6 +894,10 @@ textarea{
         position: relative;
         width:300px;
        z-index:101;
+    }
+    .searchDiv, #sortiranje, .selectBox, #chbs,#datum {
+        width: 200px;
+       
     }
 }
 
