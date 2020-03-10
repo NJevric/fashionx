@@ -11,7 +11,11 @@
         },
         "datum":"2020-02-23",
         "tekst":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
-        "kategorija":"trends",
+        "kategorija":{
+            "id":"1",
+            "naziv": "trends"
+        },
+           
         "komentari":[
             {
                 "id":1,
@@ -35,7 +39,10 @@
         },
         "datum":"2020-02-26",
         "tekst":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
-        "kategorija":"news",
+        "kategorija":{
+            "id":"2",
+            "naziv": "news"
+        },
         "komentari":[
             {
                 "id":1,
@@ -59,7 +66,10 @@
         },
         "datum":"2020-03-01",
         "tekst":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
-        "kategorija":"trends",
+        "kategorija":{
+            "id":"1",
+            "naziv": "trends"
+        },
         "komentari":[
             {
                 "id":1,
@@ -83,7 +93,10 @@
         },
         "datum":"2020-01-16",
         "tekst":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
-        "kategorija":"trends",
+        "kategorija":{
+            "id":"1",
+            "naziv": "trends"
+        },
         "komentari":[
             {
                 "id":1,
@@ -107,7 +120,10 @@
         },
         "datum":"2020-02-10",
         "tekst":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
-        "kategorija":"news",
+        "kategorija":{
+            "id":"2",
+            "naziv": "news"
+        },
         "komentari":[
             {
                 "id":1,
@@ -128,7 +144,10 @@
         },
         "datum":"2020-03-07",
         "tekst":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
-        "kategorija":"trends",
+        "kategorija":{
+            "id":"1",
+            "naziv": "trends"
+        },
         "komentari":[]
     }
 ]
