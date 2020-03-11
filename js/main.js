@@ -4,7 +4,7 @@ window.onload=function(){
     prikaziInstagram();
     navigacija();
     prikaziFooter();
-
+   
 }
 
 // ZA SVE STRANICE
@@ -94,7 +94,7 @@ function ispisiNavigaciju(){
         dataType: "json",
         success: function (data) {
            
-            let ispis=`<li><a href=""><i class="fas fa-shopping-cart"></i></a></li>`;
+            let ispis=`<li><a href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>`;
             for(let i of data){
                 ispis+=`
                 <li><a href="${i.href}">${i.tekst}</a></li>`
@@ -234,13 +234,14 @@ function ispisProizvodaFilter(obj){
           
         <div class="cena d-flex">
             <p class="cenaProizvod">${element.cena} &euro;</p>
-            <i class="fas fa-shopping-cart ml-auto"></i>  
+            <i class="fas fa-shopping-cart ml-auto dodajUKorpu" data-id=${element.id} data-value="${element.naslov}"></i>  
         </div>
+        <p class="korpaInfo"></p>
         </div>`
        
    });
     document.getElementById("proizvodiPrikaz").innerHTML=ispis;
-    
+    proizvodiUKorpi();
 }
 prikaziSveProizvode();
 function filtrirajInput(text){
@@ -415,11 +416,64 @@ function filterKategorija(){
         }
     })
 }
+function proizvodiUKorpi(){
 
+    if(localStorage){
+        let dugme = document.getElementsByClassName("dodajUKorpu");
+        for(let i of dugme){
+            i.addEventListener("click",dodajUKorpu);
+        }
+        
+    }
+    else{
+        alert("Your Browser doesnt support localStorage");
+    }
+}
+
+function dodajUKorpu(){
+    let id = this.getAttribute('data-id');
+    let proizvodiULs=JSON.parse(localStorage.getItem("proizvodi"));
+    
+    if(proizvodiULs){
+       if( proizvodiULs.filter(p => p.id == id).length){
+        //    povecaj za jedan
+            let proizvod = JSON.parse(localStorage.getItem("proizvodi"));
+            for(let i in proizvod){
+                if(proizvod[i].id == id) {
+                    proizvod[i].kolicina++;
+                    break;
+                }      
+            }
+            localStorage.setItem("proizvodi", JSON.stringify(proizvod));
+       }
+       else{
+        //    dodaj u niz ako postoji
+        let proizvod = JSON.parse(localStorage.getItem("proizvodi"));
+        proizvod.push({
+            id : id,
+            kolicina : 1
+        });
+        localStorage.setItem("proizvodi", JSON.stringify(proizvod));
+       }
+    }
+    else{
+        // napravi niz ako ne postoji
+        let proizvod = [];
+        proizvod[0] = {
+            id : id,
+            kolicina : 1
+        };
+        localStorage.setItem("proizvodi", JSON.stringify(proizvod));
+    }
+    let name = this.getAttribute('data-value');
+    alert(name + " added to cart");
+}
 }
 
 //WOMAN STRANA
 if(url.indexOf("woman.html")!=-1){
+    // proizvodiUKorpi();
+    // dodajUKorpu();
     var expanded = false;
     document.getElementById("sortiranje").addEventListener("change",sortiraj);
 function prikaziChbZaFilter() {
@@ -793,7 +847,81 @@ if(url.indexOf("contact.html")!=-1){
 
 }
 
+// CART STRANA
+if(url.indexOf("cart.html")!=-1){
+    function ispisProizvodaUKorpi(){
 
+        let proizvodi = JSON.parse(localStorage.getItem("proizvodi"));
+    
+        if(proizvodi.length){
+            $.ajax({
+                url : "data/proizvodi.json",
+                method:"get",
+                dataType:"json",
+                success : function(data) {
+                      data = data.muski.filter(i => {
+                        for(let proizvod of proizvodi)
+                        {
+                            if(i.id == proizvod.id) {
+                                i.kolicina = proizvod.kolicina;
+                                return true;
+                            }
+                                
+                        }
+                        return false;
+                    });
+                  
+                    proizvodKorpa(data);
+                },
+                error:function(xhr){
+                    console.log(xhr);
+                }
+            });
+            
+        }           
+        if(proizvodi.length==0){
+            let ispis="<h2>Your cart is empty</h2>";
+           document.getElementById("prikaziCart").innerHTML=ispis;
+        }
+    }
+    
+
+    ispisProizvodaUKorpi();
+    
+    function proizvodKorpa(data){
+        let ispis="";
+
+        for(let i of data){
+        
+            ispis+=`<div class="row mb-4 proizvodCart">
+            <div class="col-lg-2 col-9 d-flex cartSlika mx-auto">
+                <img src="img/${i.slika.src}" class="img-fluid pb-2"/>
+                
+            </div>
+            <div class="col-lg-8 col-9 leviBlokCart mx-auto">
+                <h3 class="pt-2 pt-lg-0">${i.naslov} (${i.kolicina})</h3>
+                <p>Price <span class="cenaKorpa">${i.cena} &euro;</span></p>
+                
+            </div>
+            <div class="col-lg-2 col-9 desniBlokCart mx-auto">
+                <i class="far fa-times-circle brisiProizvod float-right float-lg-none" onclick="return removeFromCart(${i.id})"></i>
+                <p class="pb-auto">Total <span class="cenaKorpa">${i.cena* i.kolicina} &euro;</span></p>
+            </div>
+        </div>`
+        }
+        
+        document.getElementById("prikaziCart").innerHTML=ispis;
+        
+    }
+    function removeFromCart(id) {
+        let products = JSON.parse(localStorage.getItem("proizvodi"));
+        let filtered = products.filter(p => p.id != id);
+    
+        localStorage.setItem("proizvodi", JSON.stringify(filtered));
+        ispisProizvodaUKorpi();
+        
+    }
+}
 
 
 

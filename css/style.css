@@ -444,7 +444,8 @@ footer{
     font-size:1.2em;
 }
 #proizvodiPrikaz,#blogPrikaz{
-    border-left:2px solid #BDC3C7;
+    /* border-left:2px solid #BDC3C7;
+    border-left:1px solid goldenrod; */
     padding-left: 50px;
 }
 .selectBox {
@@ -505,6 +506,9 @@ main{
     overflow: hidden;
     transition: 0.5s ease;
     display: block;
+    border-bottom: 1px solid goldenrod;
+    border-left:1px solid goldenrod;
+    padding:3px;
 }
   
 .proizvodSlika:hover img {
@@ -618,8 +622,52 @@ textarea{
 }
 
 /* STRANICA KONTAKT */
-@media screen and (max-width: 1024px) {
 
+/* STRANICA CART */
+.cartSlika{
+   border-left: 2px solid goldenrod;
+   border-bottom: 2px solid goldenrod;
+}
+.brisiProizvod{
+    font-size:1.8em;
+}
+.brisiProizvod:hover{
+    color:goldenrod;
+}
+
+.desniBlokCart,.leviBlokCart{
+    position: relative;
+    
+}
+.desniBlokCart p{
+    position: absolute;
+    bottom:0px;
+    left:-40px;
+   border-bottom: 2px solid goldenrod;
+   font-size:1.2em;
+}
+.leviBlokCart p{
+    position: absolute;
+    bottom:0px;
+    font-size:1.2em;
+}
+.cenaKorpa{
+    font-weight: 500;
+    font-size:1.1em;
+}
+@media screen and (max-width: 1024px) {
+    .leviBlokCart p,.desniBlokCart p{
+        position: relative;
+        left:0px;
+    }
+
+    .desniBlokCart p{
+        border:0px;
+        
+    }
+    .cartSlika{
+        border-bottom: 0px;
+    }
     #navigacija ul li{
        
         font-size:17px;
