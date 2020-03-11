@@ -45,7 +45,7 @@
         <div class="container mx-auto">
             <div class="row">
                 <div class="col-lg-3 col-10 mb-3">
-                    <form action="#">
+                    <form action="#" class="mb-3">
                 
                         <div class="input-group  searchDiv">
                             <div class="input-group-prepend">
@@ -54,46 +54,40 @@
                             <input type="text" class="form-control" id="searchInput" placeholder="Search Products" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                    </form>
-            
-                </div>
-                <div class="col-lg-9 mb-3 mb-md-5 col-10">
-                    <form action="#">
+                   <form action="#" class="mb-3">
                         <select class="form-control" id="sortiranje">
-                            
+                        
                         </select>
                     </form>
+                    <form class="mb-3">
+                
+                    <div class="selectBox" onclick="prikaziChbZaFilter()">
+                      <select>
+                        <option>Choose category</option>
+                      </select>
+                      <div class="sakrijOption"></div>
+                    </div>
+                    <div id="chbs">
+  
+                    </div>
+               
+                    </form>
+                </div>
+                <div class="col-lg-9 col-12 row" id="proizvodiPrikaz">
+                
+        
                 </div>
             </div>
-           <div class="row">
-            <div class="col-lg-3">
-               <form>
-                
-                  <div class="selectBox" onclick="prikaziChbZaFilter()">
-                    <select>
-                      <option>Choose category</option>
-                    </select>
-                    <div class="sakrijOption"></div>
-                  </div>
-                  <div id="chbs">
-
-                  </div>
-             
-              </form>
-            </div>
-
-            <div class="col-lg-9 col-12 row mt-5 mt-md-0" id="proizvodiPrikaz">
-                
-                    <!-- <div class="col-lg-4 proizvod">
-                        <img src="img/proizvod.jpg" class="img-fluid mb-3"/>
-                        <h3>Sweather</h3>
-                        <p>Stripper Sweather</p>
-                        <hr/>
-                        <p class="cenaProizvod">30 &euro;</p>
-                    </div> -->
-              
+           <!-- <div class="row">
+                <div class="col-lg-3">
                
-            </div>
-        </div>
+                </div>
+
+                <div class="col-lg-9 col-12 row" id="proizvodiPrikaz">
+                
+        
+                </div>
+            </div> -->
         
            
     </main>
