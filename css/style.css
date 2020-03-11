@@ -506,8 +506,8 @@ main{
     overflow: hidden;
     transition: 0.5s ease;
     display: block;
-    border-bottom: 1px solid goldenrod;
-    border-left:1px solid goldenrod;
+    border-bottom: 2px solid goldenrod;
+    border-left:2px solid goldenrod;
     padding:3px;
 }
   
