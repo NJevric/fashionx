@@ -347,6 +347,7 @@ font-weight: 500;
     background-color:#C93756;
     color:#fff;
 }
+
 /* kraj bloga */
 
 /* FOOTER */
@@ -644,9 +645,10 @@ textarea{
 .desniBlokCart p{
     position: absolute;
     bottom:0px;
-    left:-40px;
+    /* left:-40px; */
    border-bottom: 2px solid goldenrod;
    font-size:1.2em;
+   right: 20px;
 }
 .leviBlokCart p{
     position: absolute;

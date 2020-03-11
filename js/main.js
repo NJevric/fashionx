@@ -180,7 +180,7 @@ function proveraSubscribe(){
     let regEmail=/^\w+((\,|\-|\_)?\w+)*@\w{2,6}\.\w{2,3}$/;
 
     if(!emailSub.match(regEmail)){
-        document.getElementById("greskaSub").innerHTML="Wrong email format input<br/>Refresh the page and write an email in correct format";
+        document.getElementById("greskaSub").innerHTML="Wrong email format input<br/>Refresh the page and write an email in correct format*";
         formaSub.reset();
         return false;
     }
@@ -255,8 +255,13 @@ function filtrirajInput(text){
                 return true;
               
             }})
-            
-            ispisProizvodaFilter(filtrirano);
+            if(filtrirano.length){
+                ispisProizvodaFilter(filtrirano);
+            }
+           if(filtrirano.length==0){
+               let ispis="<h2>There is no such product</h2>"
+              document.getElementById("proizvodiPrikaz").innerHTML=ispis;
+           }
             // console.log(filtrirano);
             
         },
@@ -566,8 +571,13 @@ function prikaziChbZaFilter() {
                   
                 }})
                 
-                ispisProizvodaFilter(filtrirano);
-                // console.log(filtrirano);
+                if(filtrirano.length){
+                    ispisProizvodaFilter(filtrirano);
+                }
+               if(filtrirano.length==0){
+                   let ispis="<h2>There is no such product</h2>"
+                  document.getElementById("proizvodiPrikaz").innerHTML=ispis;
+               }
                 
             },
             error:function(xhr){
@@ -705,7 +715,14 @@ if(url.indexOf("blog.html")!=-1){
                     return true;
                   
                 }})
-                ispisBlogova(filtrirano);  
+                if(filtrirano.length){
+                    ispisBlogova(filtrirano);  
+                }
+               if(filtrirano.length==0){
+                   let ispis="<h2>There is no such blog headline.</h2>"
+                  document.getElementById("blogPrikaz").innerHTML=ispis;
+               }
+                 
             },
             error:function(xhr){
                 console.log(xhr);
@@ -768,7 +785,14 @@ if(url.indexOf("blog.html")!=-1){
               return izabranDatum == x.datum;
             });
     
-            ispisBlogova(filtrirano);
+            if(filtrirano.length){
+                ispisBlogova(filtrirano);  
+            }
+           if(filtrirano.length==0){
+               let ispis="<h2>There is no such blog with your chosen date.</h2>"
+              document.getElementById("blogPrikaz").innerHTML=ispis;
+           }
+           
           },
           error: function (err) {
             console.error(err);
@@ -892,32 +916,34 @@ if(url.indexOf("cart.html")!=-1){
         let ispis="";
 
         for(let i of data){
-        
-            ispis+=`<div class="row mb-4 proizvodCart">
+            
+                ispis+=`<div class="row mb-4 proizvodCart">
             <div class="col-lg-2 col-9 d-flex cartSlika mx-auto">
                 <img src="img/${i.slika.src}" class="img-fluid pb-2"/>
                 
             </div>
             <div class="col-lg-8 col-9 leviBlokCart mx-auto">
                 <h3 class="pt-2 pt-lg-0">${i.naslov} (${i.kolicina})</h3>
-                <p>Price <span class="cenaKorpa">${i.cena} &euro;</span></p>
+                <p>Price <span class="cenaKorpa">${i.cena * 0.9} &euro;</span> (10% discount)</p>
                 
             </div>
             <div class="col-lg-2 col-9 desniBlokCart mx-auto">
                 <input><i class="far fa-times-circle brisiProizvod float-right float-lg-none" onclick="removeFromCart(${i.id})"></i></input>
-                <p class="pb-auto">Total <span class="cenaKorpa">${i.cena* i.kolicina} &euro;</span></p>
+                <p class="pb-auto">Total <span class="cenaKorpa">${i.cena* i.kolicina *0.9} &euro;</span></p>
             </div>
         </div>`
+           
+            
         }
         
         document.getElementById("prikaziCart").innerHTML=ispis;
         
     }
     function removeFromCart(id) {
-        let products = JSON.parse(localStorage.getItem("proizvodi"));
-        let filtered = products.filter(p => p.id != id);
+        let proizvodi = JSON.parse(localStorage.getItem("proizvodi"));
+        let filtrirano = proizvodi.filter(p => p.id != id);
     
-        localStorage.setItem("proizvodi", JSON.stringify(filtered));
+        localStorage.setItem("proizvodi", JSON.stringify(filtrirano));
         ispisProizvodaUKorpi();
         
     }
