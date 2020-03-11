@@ -904,7 +904,7 @@ if(url.indexOf("cart.html")!=-1){
                 
             </div>
             <div class="col-lg-2 col-9 desniBlokCart mx-auto">
-                <i class="far fa-times-circle brisiProizvod float-right float-lg-none" onclick="return removeFromCart(${i.id})"></i>
+                <input><i class="far fa-times-circle brisiProizvod float-right float-lg-none" onclick="removeFromCart(${i.id})"></i></input>
                 <p class="pb-auto">Total <span class="cenaKorpa">${i.cena* i.kolicina} &euro;</span></p>
             </div>
         </div>`

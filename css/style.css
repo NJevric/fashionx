@@ -634,7 +634,9 @@ textarea{
 .brisiProizvod:hover{
     color:goldenrod;
 }
-
+.desniBlokCart input{
+    border:0px;
+}
 .desniBlokCart,.leviBlokCart{
     position: relative;
     
@@ -660,10 +662,12 @@ textarea{
         position: relative;
         left:0px;
     }
-
+    
     .desniBlokCart p{
         border:0px;
-        
+        position: absolute;
+        left:13px;
+        top:0px;
     }
     .cartSlika{
         border-bottom: 0px;
