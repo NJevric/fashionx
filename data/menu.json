@@ -19,5 +19,9 @@
     {
         "href":"contact.html",
         "tekst":"Contact"
+    },
+    {
+        "href":"autor.html",
+        "tekst":"Author" 
     }
 ]

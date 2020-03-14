@@ -1,4 +1,4 @@
-{"muski":[ 
+[ 
     {
         "id":1,
         "slika":{
@@ -86,127 +86,139 @@
         "opis":"Leather Shoes",
         "cena":110,
         "pol":"muski"
-    }
-],
-"zenski":[
+    },
+
+
     {
-        "id":1,
+        "id":9,
         "slika":{
             "src":"womenSweather1.jpg",
             "alt":"Women Sweather"
         },
         "naslov":"Sweather",
         "opis":"Stripper Sweather",
-        "cena":25
+        "cena":25,
+        "pol":"zenski"
     },
     {
-        "id":2,
+        "id":10,
         "slika":{
             "src":"womenSweather2.jpg",
             "alt":"Women Sweather"
         },
         "naslov":"Sweather",
         "opis":"Stripper Sweather",
-        "cena":30
+        "cena":30,
+        "pol":"zenski"
     },
     {
-        "id":3,
+        "id":11,
         "slika":{
             "src":"womanCoat.jpg",
             "alt":"Coat"
         },
         "naslov":"Coat",
         "opis":"Stripper Sweather",
-        "cena":120
+        "cena":120,
+        "pol":"zenski"
     },
     {
-        "id":4,
+        "id":12,
         "slika":{
             "src":"womanJacket.jpg",
             "alt":"Jacket"
         },
         "naslov":"Jacket",
         "opis":"Stripper Sweather",
-        "cena":110
+        "cena":110,
+        "pol":"zenski"
     },
     {
-        "id":5,
+        "id":13,
         "slika":{
             "src":"womanSkirt.jpg",
             "alt":"Skirt"
         },
         "naslov":"Skirt",
         "opis":"Stripper Sweather",
-        "cena":32
+        "cena":32,
+        "pol":"zenski"
     },
     {
-        "id":6,
+        "id":14,
         "slika":{
             "src":"womanSkirt2.jpg",
             "alt":"Skirt"
         },
         "naslov":"Skirt",
         "opis":"Stripper Sweather",
-        "cena":35
+        "cena":35,
+        "pol":"zenski"
     },
     {
-        "id":7,
+        "id":15,
         "slika":{
             "src":"womanShirt.jpg",
             "alt":"Shirt"
         },
         "naslov":"Shirt",
         "opis":"Stripper Sweather",
-        "cena":15
+        "cena":15,
+        "pol":"zenski"
     },
     {
-        "id":8,
+        "id":16,
         "slika":{
             "src":"womanPants1.jpg",
             "alt":"Pants"
         },
         "naslov":"Pants",
         "opis":"Stripper Sweather",
-        "cena":45
+        "cena":45,
+        "pol":"zenski"
     },
     {
-        "id":9,
+        "id":17,
         "slika":{
             "src":"womanPants2.jpg",
             "alt":"Pants"
         },
         "naslov":"Pants",
         "opis":"Stripper Sweather",
-        "cena":42
+        "cena":42,
+        "pol":"zenski"
     },
     {
-        "id":10,
+        "id":18,
         "slika":{
             "src":"womanShoes.jpg",
             "alt":"Shoes"
         },
         "naslov":"Shoes",
         "opis":"Stripper Sweather",
-        "cena":70
+        "cena":70,
+        "pol":"zenski"
     },
     {
-        "id":11,
+        "id":19,
         "slika":{
             "src":"womanShoes2.jpg",
             "alt":"Shoes"
         },
         "naslov":"Shoes",
         "opis":"Stripper Sweather",
-        "cena":75
+        "cena":75,
+        "pol":"zenski"
     }, 
     {
-        "id":12,
+        "id":20,
         "slika":{
             "src":"womanShoes3.jpg",
             "alt":"Shoes"
         },
         "naslov":"Shoes",
         "opis":"Stripper Sweather",
-        "cena":60
+        "cena":60,
+        "pol":"zenski"
     }
-]}
+]

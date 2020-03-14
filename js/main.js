@@ -194,18 +194,31 @@ function proveraSubscribe(){
 }
 }
 
-
+function vratiMuske(data){
+    return data.filter(x => x.pol == "muski");
+}
+function vratiZenske(data){
+    return data.filter(x => x.pol == "zenski");
+}
 //MAN STRANA
 if(url.indexOf("man.html")!=-1){
     ispisiSelectSort();
     document.getElementById("sortiranje").addEventListener("change",sortiraj);
 function prikaziSveProizvode(){
     $.ajax({
-        url: "data/proizvodi.json",
+        url: "data/products.json",
         method: "get",
         dataType: "json",
         success: function (data) {
-            ispisProizvodaFilter(data.muski);  
+            //vratiMuske(data);
+           data=vratiMuske(data);
+            
+                //console.log(dataM);
+                ispisProizvodaFilter(data); 
+            
+            
+            // console.log(data);
+            
             
             document.getElementById("searchInput").addEventListener("keyup",function(){
                 String(this.value)? filtrirajInput(this.value) : prikaziSveProizvode();
@@ -222,8 +235,9 @@ function prikaziSveProizvode(){
 }
 function ispisProizvodaFilter(obj){
     let ispis="";
-
+    
    obj.forEach(element => {ispis+=` 
+   
         <div class="col-lg-4 col-md-4 col-6 proizvod mb-5  mx-md-0">
         <div class="proizvodSlika">
         <img src="img/${element.slika.src}" class="img-fluid mb-3 mx-auto" alt="${element.slika.alt}"/>
@@ -247,21 +261,23 @@ prikaziSveProizvode();
 function filtrirajInput(text){
     
     $.ajax({
-        url: "data/proizvodi.json",
+        url: "data/products.json",
         method: "get",
         dataType: "json",
         success: function (data) {
-            let filtrirano=data.muski.filter(x=>{if(x.naslov.toLowerCase().indexOf(text.toLowerCase())!=-1){
-                return true;
-              
-            }})
-            if(filtrirano.length){
-                ispisProizvodaFilter(filtrirano);
-            }
-           if(filtrirano.length==0){
-               let ispis="<h2>There is no such product</h2>"
-              document.getElementById("proizvodiPrikaz").innerHTML=ispis;
-           }
+                let filtrirano=data.filter(x=>{if(x.naslov.toLowerCase().indexOf(text.toLowerCase())!=-1 && x.pol=="muski"){
+                    return true;
+                  
+                }})
+                if(filtrirano.length){
+                    ispisProizvodaFilter(filtrirano);
+                }
+               if(filtrirano.length==0){
+                   let ispis="<h2>There is no such product</h2>"
+                  document.getElementById("proizvodiPrikaz").innerHTML=ispis;
+               }
+            
+           
             // console.log(filtrirano);
             
         },
@@ -291,46 +307,51 @@ function ispisiSelectSort(){
 function sortiraj(){
     let izabrano=document.getElementById("sortiranje");
     $.ajax({
-        url: "data/proizvodi.json",
+        url: "data/products.json",
         method: "get",
         dataType: "json",
         success: function (data) {
+            data=vratiMuske(data);
+
             
             // console.log(muski);
             if(izabrano.value==1){
-                console.log(data.muski);
-                data.muski.sort(function(a,b){
+                console.log(data);
+                data.sort(function(a,b){
                     
                     return a.cena-b.cena;
      
                 })
-                ispisProizvodaFilter(data.muski);
+                // ispisProizvodaFilter(data);
             }
             else if(izabrano.value==2){
-                 data.muski.sort(function(a,b){
+                 data.sort(function(a,b){
                     return b.cena-a.cena;
                 })
-                ispisProizvodaFilter(data.muski);   
+                // ispisProizvodaFilter(data);   
             }
             else if(izabrano.value==3){
-                data.muski.sort(function(a,b){
+                data.sort(function(a,b){
                     if(a.naslov==b.naslov)
                     return 0;
                 return a.naslov>b.naslov?1:-1;
                 })
-                ispisProizvodaFilter(data.muski);  
+                // ispisProizvodaFilter(data);  
             }
             else if(izabrano.value==4){
-                data.muski.sort(function(a,b){
+                data.sort(function(a,b){
                     if(a.naslov==b.naslov)
                     return 0;
                 return a.naslov>b.naslov?-1:1;
                 })
-                ispisProizvodaFilter(data.muski);  
+                // ispisProizvodaFilter(data);  
             }
-            else{
-                ispisProizvodaFilter(data.muski);  
-            }
+            // else{
+            //     ispisProizvodaFilter(data);  
+            //     console.log(dataM);
+            // }
+            ispisProizvodaFilter(data);    
+            
         },
         error:function(xhr){
             console.log(xhr);
@@ -397,11 +418,12 @@ function filterKategorija(){
         niz.push(cekirano);
     }
     $.ajax({
-        url:"data/proizvodi.json",
+        url:"data/products.json",
         method:"get",
         dataType:"json",
         success:function(data){
-                let filtrirano=data.muski.filter(x=>{
+            data=vratiMuske(data);
+                let filtrirano=data.filter(x=>{
                 if(niz.length!=0){
                     for(let i=0; i<niz.length; i++){
                         if(niz[i]==x.naslov)
@@ -493,12 +515,16 @@ function prikaziChbZaFilter() {
 }
     function prikaziSveProizvode(){
         $.ajax({
-            url: "data/proizvodi.json",
+            url: "data/products.json",
             method: "get",
             dataType: "json",
             success: function (data) {
-                ispisProizvodaFilter(data.zenski);  
+                // vratiZenske(data); 
                 // console.log(data.zenski);
+               data=vratiZenske(data);
+                console.log(data);
+                ispisProizvodaFilter(data); 
+                
                 document.getElementById("searchInput").addEventListener("keyup",function(){
                     String(this.value)? filtrirajInput(this.value) : prikaziSveProizvode();
                });
@@ -513,46 +539,47 @@ function prikaziChbZaFilter() {
     function sortiraj(){
         let izabrano=document.getElementById("sortiranje");
         $.ajax({
-            url: "data/proizvodi.json",
+            url: "data/products.json",
             method: "get",
             dataType: "json",
             success: function (data) {
-                
+                data=vratiZenske(data);
                 // console.log(muski);
                 if(izabrano.value==1){
                     console.log(data.zenski);
-                    data.zenski.sort(function(a,b){
+                    data.sort(function(a,b){
                         
                         return a.cena-b.cena;
          
                     })
-                    ispisProizvodaFilter(data.zenski);
+                    //ispisProizvodaFilter(data);
                 }
                 else if(izabrano.value==2){
-                     data.zenski.sort(function(a,b){
+                     data.sort(function(a,b){
                         return b.cena-a.cena;
                     })
-                    ispisProizvodaFilter(data.zenski);   
+                    //ispisProizvodaFilter(data);   
                 }
                 else if(izabrano.value==3){
-                    data.zenski.sort(function(a,b){
+                    data.sort(function(a,b){
                         if(a.naslov==b.naslov)
                         return 0;
                     return a.naslov>b.naslov?1:-1;
                     })
-                    ispisProizvodaFilter(data.zenski);  
+                    //ispisProizvodaFilter(data);  
                 }
                 else if(izabrano.value==4){
-                    data.zenski.sort(function(a,b){
+                    data.sort(function(a,b){
                         if(a.naslov==b.naslov)
                         return 0;
                     return a.naslov>b.naslov?-1:1;
                     })
-                    ispisProizvodaFilter(data.zenski);  
+                    //ispisProizvodaFilter(data);  
                 }
-                else{
-                    ispisProizvodaFilter(data.zenski);  
-                }
+                // else{
+                //     ispisProizvodaFilter(data);  
+                // }
+                ispisProizvodaFilter(data);
             },
             error:function(xhr){
                 console.log(xhr);
@@ -562,11 +589,11 @@ function prikaziChbZaFilter() {
     function filtrirajInput(text){
     
         $.ajax({
-            url: "data/proizvodi.json",
+            url: "data/products.json",
             method: "get",
             dataType: "json",
             success: function (data) {
-                let filtrirano=data.zenski.filter(x=>{if(x.naslov.toLowerCase().indexOf(text.toLowerCase())!=-1){
+                let filtrirano=data.filter(x=>{if(x.naslov.toLowerCase().indexOf(text.toLowerCase())!=-1 && x.pol=="zenski"){
                     return true;
                   
                 }})
@@ -628,11 +655,12 @@ function filterKategorija(){
         niz.push(cekirano);
     }
     $.ajax({
-        url:"data/proizvodi.json",
+        url:"data/products.json",
         method:"get",
         dataType:"json",
         success:function(data){
-                let filtrirano=data.zenski.filter(x=>{
+            data=vratiZenske(data);
+                let filtrirano=data.filter(x=>{
                 if(niz.length!=0){
                     for(let i=0; i<niz.length; i++){
                         if(niz[i]==x.naslov)
@@ -711,7 +739,7 @@ if(url.indexOf("blog.html")!=-1){
             method: "get",
             dataType: "json",
             success: function (data) {
-                let filtrirano=data.filter(x=>{if(x.naslov.toLowerCase().indexOf(text.toLowerCase())!=-1){
+                let filtrirano=data.filter(x=>{if(x.naslov.toLowerCase().indexOf(text.toLowerCase())!=-1 ){
                     return true;
                   
                 }})
@@ -876,14 +904,14 @@ if(url.indexOf("cart.html")!=-1){
     function ispisProizvodaUKorpi(){
 
         let proizvodi = JSON.parse(localStorage.getItem("proizvodi"));
-    
+        
         if(proizvodi.length){
             $.ajax({
-                url : "data/proizvodi.json",
+                url : "data/products.json",
                 method:"get",
                 dataType:"json",
                 success : function(data) {
-                      data = data.muski.filter(i => {
+                      data = data.filter(i => {
                         for(let proizvod of proizvodi)
                         {
                             if(i.id == proizvod.id) {
@@ -892,9 +920,14 @@ if(url.indexOf("cart.html")!=-1){
                             }
                                 
                         }
+                        
+                    
+                        
                         return false;
+                        
                     });
                   
+                   
                     proizvodKorpa(data);
                 },
                 error:function(xhr){
