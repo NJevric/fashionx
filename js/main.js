@@ -213,7 +213,7 @@ function prikaziSveProizvode(){
     
             data=vratiMuske(data);
             ispisProizvodaFilter(data); 
-           
+            upisiProizvodeULs(data);
             document.getElementById("searchInput").addEventListener("keyup",function(){
                 String(this.value)? filtrirajInput(this.value) : prikaziSveProizvode();
            });
@@ -223,7 +223,13 @@ function prikaziSveProizvode(){
         } 
     });
 }
-
+function upisiProizvodeULs(data){
+    let idProizvod=data.map(x=>x.id);
+    localStorage.setItem("idProizvod",JSON.stringify(idProizvod));
+}
+function vratiVrednostIzLs(){
+    return JSON.parse(localStorage.getItem("idProizvod"));
+}
 function ispisProizvodaFilter(obj){
     let ispis="";
     
@@ -248,6 +254,7 @@ function ispisProizvodaFilter(obj){
     document.getElementById("proizvodiPrikaz").innerHTML=ispis;
     proizvodiUKorpi();
 }
+
 prikaziSveProizvode();
 function filtrirajInput(text){
    
@@ -293,7 +300,7 @@ function ispisiSelectSort(){
 }
 function sortiraj(){
     let izabrano=document.getElementById("sortiranje");
-    
+    let idProizvod = vratiVrednostIzLs();
     $.ajax({
         url: "data/products.json",
         method: "get",
@@ -301,35 +308,43 @@ function sortiraj(){
         success: function (data) {
             
             data=vratiMuske(data);
-
+            let nizZaCuvanjeSorta=[];
+            for(let i of data){
+                for(let j of idProizvod){
+                    if(i.id == j){
+                        // var lsFilter=data;
+                        nizZaCuvanjeSorta.push(i);
+                    }
+                }
+            }
             if(izabrano.value==1){
                 console.log(data);
-                data.sort(function(a,b){
+                nizZaCuvanjeSorta.sort(function(a,b){
                     
                     return a.cena-b.cena;
      
                 })
             }
             else if(izabrano.value==2){
-                 data.sort(function(a,b){
+                nizZaCuvanjeSorta.sort(function(a,b){
                     return b.cena-a.cena;
                 })
             }
             else if(izabrano.value==3){
-                data.sort(function(a,b){
+                nizZaCuvanjeSorta.sort(function(a,b){
                     if(a.naslov==b.naslov)
                     return 0;
                 return a.naslov>b.naslov?1:-1;
                 })
             }
             else if(izabrano.value==4){
-                data.sort(function(a,b){
+                nizZaCuvanjeSorta.sort(function(a,b){
                     if(a.naslov==b.naslov)
                     return 0;
                 return a.naslov>b.naslov?-1:1;
                 })
             }
-            ispisProizvodaFilter(data);   
+            ispisProizvodaFilter(nizZaCuvanjeSorta);   
         },
         error:function(xhr){
             console.log(xhr);
@@ -378,6 +393,7 @@ function ispisSelectFilter(){
 
 var niz=[];
 function filterKategorija(){
+    let idProizvod = vratiVrednostIzLs();
     let cekirano = this.value;
     if(niz.includes(cekirano)){
         niz=niz.filter(x=>{
@@ -393,7 +409,14 @@ function filterKategorija(){
         dataType:"json",
         success:function(data){
             data=vratiMuske(data);
-                let filtrirano=data.filter(x=>{
+            for(let i of data){
+                for(let j of idProizvod){
+                    if(i.id == j){
+                        var lsFilter=data;
+                    }
+                }
+            }
+                lsFilter=lsFilter.filter(x=>{
                 if(niz.length!=0){
                     for(let i=0; i<niz.length; i++){
                         if(niz[i]==x.naslov)
@@ -404,8 +427,9 @@ function filterKategorija(){
                     return true;
                 }
             })
-            console.log(filtrirano);
-            ispisProizvodaFilter(filtrirano);
+            //console.log(filtrirano);
+            ispisProizvodaFilter(lsFilter);
+            upisiProizvodeULs(lsFilter);
             console.log(niz);          
         }
     })
@@ -487,12 +511,10 @@ if(url.indexOf("woman.html")!=-1){
             method: "get",
             dataType: "json",
             success: function (data) {
-                // vratiZenske(data); 
-                // console.log(data.zenski);
                data=vratiZenske(data);
                 console.log(data);
                 ispisProizvodaFilter(data); 
-                
+                upisiProizvodeULs(data);
                 document.getElementById("searchInput").addEventListener("keyup",function(){
                     String(this.value)? filtrirajInput(this.value) : prikaziSveProizvode();
                });
@@ -505,6 +527,7 @@ if(url.indexOf("woman.html")!=-1){
     }
     prikaziSveProizvode();  
     function sortiraj(){
+        let idProizvod = vratiVrednostIzLs();
         let izabrano=document.getElementById("sortiranje");
         $.ajax({
             url: "data/products.json",
@@ -512,32 +535,40 @@ if(url.indexOf("woman.html")!=-1){
             dataType: "json",
             success: function (data) {
                 data=vratiZenske(data);
-              
+                let nizZaCuvanjeSorta=[];
+                for(let i of data){
+                    for(let j of idProizvod){
+                        if(i.id == j){
+                         
+                            nizZaCuvanjeSorta.push(i);
+                        }
+                    }
+                }
                 if(izabrano.value==1){
-                    data.sort(function(a,b){                        
+                    nizZaCuvanjeSorta.sort(function(a,b){                        
                         return a.cena-b.cena;         
                     })
                 }
                 else if(izabrano.value==2){
-                     data.sort(function(a,b){
+                    nizZaCuvanjeSorta.sort(function(a,b){
                         return b.cena-a.cena;
                     })
                 }
                 else if(izabrano.value==3){
-                    data.sort(function(a,b){
+                    nizZaCuvanjeSorta.sort(function(a,b){
                         if(a.naslov==b.naslov)
                         return 0;
                     return a.naslov>b.naslov?1:-1;
                     })
                 }
                 else if(izabrano.value==4){
-                    data.sort(function(a,b){
+                    nizZaCuvanjeSorta.sort(function(a,b){
                         if(a.naslov==b.naslov)
                         return 0;
                     return a.naslov>b.naslov?-1:1;
                     }) 
                 }
-                ispisProizvodaFilter(data);
+                ispisProizvodaFilter(nizZaCuvanjeSorta);
             },
             error:function(xhr){
                 console.log(xhr);
@@ -603,6 +634,7 @@ if(url.indexOf("woman.html")!=-1){
     
 var niz=[];
 function filterKategorija(){
+    let idProizvod = vratiVrednostIzLs();
     let cekirano = this.value;
     if(niz.includes(cekirano)){
         niz=niz.filter(x=>{
@@ -618,7 +650,12 @@ function filterKategorija(){
         dataType:"json",
         success:function(data){
             data=vratiZenske(data);
-                let filtrirano=data.filter(x=>{
+            for(let i of data){
+                for(let j of idProizvod){
+                    var lsFilterZ=data;
+                }
+            }
+                lsFilterZ=lsFilterZ.filter(x=>{
                 if(niz.length!=0){
                     for(let i=0; i<niz.length; i++){
                         if(niz[i]==x.naslov)
@@ -631,8 +668,10 @@ function filterKategorija(){
                     return true;
                 }
             })
-            console.log(filtrirano);
-            ispisProizvodaFilter(filtrirano);
+            console.log(lsFilterZ);
+            upisiProizvodeULs(lsFilterZ);
+            ispisProizvodaFilter(lsFilterZ);
+            
             console.log(niz);
           
         }
@@ -648,7 +687,8 @@ if(url.indexOf("blog.html")!=-1){
             method: "get",
             dataType: "json",
             success: function (data) {
-                ispisBlogova(data);  
+                ispisBlogova(data); 
+               
                 console.log(data.zenski);
                 document.getElementById("searchInput").addEventListener("keyup",function(){
                     String(this.value)? filtrirajInput(this.value) : prikaziSveProizvode();
@@ -665,8 +705,15 @@ if(url.indexOf("blog.html")!=-1){
     }
 
     function ispisBlogova(data){
+
+        data.sort(function(a, b) {
+            const datum1 = new Date(a.datum);
+            const datum2 = new Date(b.datum);
+            return Date.UTC(datum2.getFullYear(), datum2.getMonth(), datum2.getDate()) - Date.UTC(datum1.getFullYear(), datum1.getMonth(), datum1.getDate()); 
+          });
+
         let ispis="";
-        data.forEach(i => {
+        for(let i of data){
             ispis+=`
                 <div class="col-lg-6 proizvod mb-5">
                     <img src="img/${i.slika.src}" class="img-fluid mb-3" alt="${i.slika.alt}"/>
@@ -681,9 +728,13 @@ if(url.indexOf("blog.html")!=-1){
                         <p>${i.komentari.length}</p>
                     </div>
                 </div>`
-        });
+        };
         document.getElementById("blogPrikaz").innerHTML=ispis;
     }
+    
+        
+       
+    
     ispisiSveBlogove();
     ispisOptionTagKategorija();
     function filtrirajInput(text){
