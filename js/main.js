@@ -180,7 +180,7 @@ function proveraSubscribe(){
     let regEmail=/^\w+((\,|\-|\_)?\w+)*@\w{2,6}\.\w{2,3}$/;
 
     if(!emailSub.match(regEmail)){
-        document.getElementById("greskaSub").innerHTML="Wrong email format input<br/>Refresh the page and write an email in correct format*";
+        document.getElementById("greskaSub").innerHTML="Invalid email address.<br/>Refresh the page and write an email in correct format*";
         formaSub.reset();
         return false;
     }
@@ -210,29 +210,20 @@ function prikaziSveProizvode(){
         method: "get",
         dataType: "json",
         success: function (data) {
-            //vratiMuske(data);
-           data=vratiMuske(data);
-            
-                //console.log(dataM);
-                ispisProizvodaFilter(data); 
-            
-            
-            // console.log(data);
-            
-            
+    
+            data=vratiMuske(data);
+            ispisProizvodaFilter(data); 
+           
             document.getElementById("searchInput").addEventListener("keyup",function(){
                 String(this.value)? filtrirajInput(this.value) : prikaziSveProizvode();
            });
-           
-         
-    
-
         },
         error:function(xhr){
             console.log(xhr);
         } 
     });
 }
+
 function ispisProizvodaFilter(obj){
     let ispis="";
     
@@ -259,15 +250,15 @@ function ispisProizvodaFilter(obj){
 }
 prikaziSveProizvode();
 function filtrirajInput(text){
-    
+   
     $.ajax({
         url: "data/products.json",
         method: "get",
         dataType: "json",
-        success: function (data) {
+        success: function (data) {           
+
                 let filtrirano=data.filter(x=>{if(x.naslov.toLowerCase().indexOf(text.toLowerCase())!=-1 && x.pol=="muski"){
-                    return true;
-                  
+                    return true;   
                 }})
                 if(filtrirano.length){
                     ispisProizvodaFilter(filtrirano);
@@ -275,11 +266,7 @@ function filtrirajInput(text){
                if(filtrirano.length==0){
                    let ispis="<h2>There is no such product</h2>"
                   document.getElementById("proizvodiPrikaz").innerHTML=ispis;
-               }
-            
-           
-            // console.log(filtrirano);
-            
+               } 
         },
         error:function(xhr){
             console.log(xhr);
@@ -306,15 +293,15 @@ function ispisiSelectSort(){
 }
 function sortiraj(){
     let izabrano=document.getElementById("sortiranje");
+    
     $.ajax({
         url: "data/products.json",
         method: "get",
         dataType: "json",
         success: function (data) {
+            
             data=vratiMuske(data);
 
-            
-            // console.log(muski);
             if(izabrano.value==1){
                 console.log(data);
                 data.sort(function(a,b){
@@ -322,13 +309,11 @@ function sortiraj(){
                     return a.cena-b.cena;
      
                 })
-                // ispisProizvodaFilter(data);
             }
             else if(izabrano.value==2){
                  data.sort(function(a,b){
                     return b.cena-a.cena;
                 })
-                // ispisProizvodaFilter(data);   
             }
             else if(izabrano.value==3){
                 data.sort(function(a,b){
@@ -336,7 +321,6 @@ function sortiraj(){
                     return 0;
                 return a.naslov>b.naslov?1:-1;
                 })
-                // ispisProizvodaFilter(data);  
             }
             else if(izabrano.value==4){
                 data.sort(function(a,b){
@@ -344,14 +328,8 @@ function sortiraj(){
                     return 0;
                 return a.naslov>b.naslov?-1:1;
                 })
-                // ispisProizvodaFilter(data);  
             }
-            // else{
-            //     ispisProizvodaFilter(data);  
-            //     console.log(dataM);
-            // }
-            ispisProizvodaFilter(data);    
-            
+            ispisProizvodaFilter(data);   
         },
         error:function(xhr){
             console.log(xhr);
@@ -380,31 +358,23 @@ function ispisSelectFilter(){
             let ispis="";
             data.muski.forEach(i => {
                 ispis+=`
-
-               
                 <label for="${i.id}">
                       <input type="checkbox" name="chb" class="mr-2" id="${i.naziv}" value="${i.naziv}" class="tipovi"/>${i.naziv}
-                </label>
-                
-            `
+                </label>`
             });
             document.getElementById("chbs").innerHTML=ispis;
-            
-            
+                      
             let tipovi=document.getElementsByName("chb");
             for(let i of tipovi){
                 
                 i.addEventListener("change",filterKategorija);
             }
-          
-
         },
         error:function(xhr){
             console.log(xhr);
         } 
     });
 }
-
 
 var niz=[];
 function filterKategorija(){
@@ -427,10 +397,8 @@ function filterKategorija(){
                 if(niz.length!=0){
                     for(let i=0; i<niz.length; i++){
                         if(niz[i]==x.naslov)
-                            return true;
-                        
-                    } 
-                    
+                            return true;                       
+                    }                    
                 }
                 else{
                     return true;
@@ -438,8 +406,7 @@ function filterKategorija(){
             })
             console.log(filtrirano);
             ispisProizvodaFilter(filtrirano);
-            console.log(niz);
-          
+            console.log(niz);          
         }
     })
 }
@@ -449,8 +416,7 @@ function proizvodiUKorpi(){
         let dugme = document.getElementsByClassName("dodajUKorpu");
         for(let i of dugme){
             i.addEventListener("click",dodajUKorpu);
-        }
-        
+        }       
     }
     else{
         alert("Your Browser doesnt support localStorage");
@@ -503,16 +469,18 @@ if(url.indexOf("woman.html")!=-1){
     // dodajUKorpu();
     var expanded = false;
     document.getElementById("sortiranje").addEventListener("change",sortiraj);
-function prikaziChbZaFilter() {
-  var checkboxes = document.getElementById("chbs");
-  if (!expanded) {
-    checkboxes.style.display = "block";
-    expanded = true;
-  } else {
-    checkboxes.style.display = "none";
-    expanded = false;
-  }
-}
+
+    function prikaziChbZaFilter() {
+        var checkboxes = document.getElementById("chbs");
+        if (!expanded) {
+            checkboxes.style.display = "block";
+            expanded = true;
+        }
+        else {
+            checkboxes.style.display = "none";
+            expanded = false;
+        }
+    }
     function prikaziSveProizvode(){
         $.ajax({
             url: "data/products.json",
@@ -544,21 +512,16 @@ function prikaziChbZaFilter() {
             dataType: "json",
             success: function (data) {
                 data=vratiZenske(data);
-                // console.log(muski);
+              
                 if(izabrano.value==1){
-                    console.log(data.zenski);
-                    data.sort(function(a,b){
-                        
-                        return a.cena-b.cena;
-         
+                    data.sort(function(a,b){                        
+                        return a.cena-b.cena;         
                     })
-                    //ispisProizvodaFilter(data);
                 }
                 else if(izabrano.value==2){
                      data.sort(function(a,b){
                         return b.cena-a.cena;
                     })
-                    //ispisProizvodaFilter(data);   
                 }
                 else if(izabrano.value==3){
                     data.sort(function(a,b){
@@ -566,19 +529,14 @@ function prikaziChbZaFilter() {
                         return 0;
                     return a.naslov>b.naslov?1:-1;
                     })
-                    //ispisProizvodaFilter(data);  
                 }
                 else if(izabrano.value==4){
                     data.sort(function(a,b){
                         if(a.naslov==b.naslov)
                         return 0;
                     return a.naslov>b.naslov?-1:1;
-                    })
-                    //ispisProizvodaFilter(data);  
+                    }) 
                 }
-                // else{
-                //     ispisProizvodaFilter(data);  
-                // }
                 ispisProizvodaFilter(data);
             },
             error:function(xhr){
@@ -697,12 +655,8 @@ if(url.indexOf("blog.html")!=-1){
                });
                document.getElementById("datum").addEventListener("change", filtrirajPoDatumu);
 
-            //    document.getElementById("sortiranje").addEventListener("change",function(){
-            //     Number(this.value) ? filtrirajPoKategoriji(this.value) : ispisiSveBlogove();
-            // })
-            document.getElementById("sortiranje").addEventListener("change", filtrirajPoKategoriji);
-
-
+                document.getElementById("sortiranje").addEventListener("change", filtrirajPoKategoriji);
+                
             },
             error:function(xhr){
                 console.log(xhr);
@@ -791,10 +745,16 @@ if(url.indexOf("blog.html")!=-1){
             dataType:"json",
             success:function(data){
                 console.log("data");
-                let filtrirano = data.filter(x => {
-                    return izabranaKategorija == x.kategorija.id;
-                  });
-                ispisBlogova(filtrirano);  
+                
+                    let filtrirano = data.filter(x => {
+                        return izabranaKategorija == x.kategorija.id;
+                      });
+                      if(filtrirano.length){
+                        ispisBlogova(filtrirano);  
+                      }
+                      if(filtrirano.length==0){
+                        ispisBlogova(data); 
+                      } 
             },
             error:function(xhr){
                 console.log(xhr);
@@ -841,24 +801,24 @@ if(url.indexOf("contact.html")!=-1){
         let greska=document.getElementsByClassName("greskaKontakt");
         let forma=document.getElementById("kontaktForma");
 
-        let regIme=/^[A-Z][a-z]{2,15}$/;
-        let regPrezime=/^[A-Z][a-z]{2,15}$/;
+        let regIme=/^[A-Z][a-z]{2,19}$/;
+        let regPrezime=/^[A-Z][a-z]{2,20}$/;
         let regEmail=/^\w+((\,|\-|\_)?\w+)*@\w{2,6}\.\w{2,3}$/;
         let greske =[];
        if(!ime.match(regIme)){
-            greska[0].innerHTML="Wrong name input *";
+            greska[0].innerHTML="First letter must be uppercase, max 20 characters *";
             // greske.push("Wrong name input"); 
             // return false;
             greske.push("1");
        }
        if(!prezime.match(regPrezime)){
-            greska[1].innerHTML="Wrong surname input *";
+            greska[1].innerHTML="First letter must be uppercase, max 20 characters *";
             // greske.push('Wrong surname input');
             greske.push("2");
             // return false;
        }
        if(!email.match(regEmail)){
-            greska[2].innerHTML="Wrong email input *";
+            greska[2].innerHTML="Invalid email address*";
             // greske.push('Wrong email input');
             greske.push("3");
             // return false;
@@ -920,14 +880,8 @@ if(url.indexOf("cart.html")!=-1){
                             }
                                 
                         }
-                        
-                    
-                        
-                        return false;
-                        
+                        return false; 
                     });
-                  
-                   
                     proizvodKorpa(data);
                 },
                 error:function(xhr){
@@ -942,7 +896,6 @@ if(url.indexOf("cart.html")!=-1){
         }
     }
     
-
     ispisProizvodaUKorpi();
     
     function proizvodKorpa(data){

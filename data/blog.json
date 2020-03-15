@@ -4,13 +4,13 @@
             "src":"blog1.jpg",
             "alt":"blog 1"
         },
-        "naslov":"Blog 1",
+        "naslov":"If You are Buying 1 Thing This Spring, Make It This",
         "autor":{
             "id":1,
             "user":"njevric"
         },
         "datum":"2020-02-23",
-        "tekst":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+        "tekst":"Swap your standard white tee out for this tunic dress to turn an errands outfit into something a little more sophisticated. I love how the length breaks up this denim on denim combo! Just add a sporty slide and baseball cap to finish it off with a casual touch.",
         "kategorija":{
             "id":"1",
             "naziv": "trends"
@@ -30,15 +30,15 @@
     {
         "slika":{
             "src":"blog2.jpg",
-            "alt":"blog 1"
+            "alt":"blog 2"
         },
-        "naslov":"Blog 1",
+        "naslov":"How To Style Leopard Print Shoes From DSW",
         "autor":{
             "id":1,
             "user":"njevric"
         },
         "datum":"2020-02-26",
-        "tekst":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+        "tekst":"Quick but very important question: Have you taken stock of your spring shoe collection yet? The new season is approaching fast and furious, and now is the time to take inventory of what you have and what you are missing before the...",
         "kategorija":{
             "id":"2",
             "naziv": "news"
@@ -57,15 +57,15 @@
     {
         "slika":{
             "src":"blog3.jpg",
-            "alt":"blog 1"
+            "alt":"blog 3"
         },
-        "naslov":"Blog 1",
+        "naslov":"Just A Few Things To Keep In Mind Before Pursuing A Degree In Fashion",
         "autor":{
             "id":1,
             "user":"njevric"
         },
         "datum":"2020-03-01",
-        "tekst":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+        "tekst":"Fashion is the most lucrative, appealing, glamorous and exciting career options in today’s world. If you have a taste for creativity, style and originality, fashion is the tailor-made career for you. Read our step by step guide what things you need to consider before stepping to a Fashion world.",
         "kategorija":{
             "id":"1",
             "naziv": "trends"
@@ -84,15 +84,15 @@
     {
         "slika":{
             "src":"blog4.jpg",
-            "alt":"blog 1"
+            "alt":"blog 4"
         },
-        "naslov":"Blog 1",
+        "naslov":"27 Unique Travel Gifts For People Traveling Solo",
         "autor":{
             "id":1,
             "user":"njevric"
         },
         "datum":"2020-01-16",
-        "tekst":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+        "tekst":"Do you have a favorite female friend and/or relative who just loves to pack her bags and explore the world? If yes, then this guide will provide you with the best gift ideas for your traveling friend! Or maybe you are the world traveler and you need to hint at presents you’d love to receive before your next trip.",
         "kategorija":{
             "id":"1",
             "naziv": "trends"
@@ -111,15 +111,15 @@
     {
         "slika":{
             "src":"blog5.jpg",
-            "alt":"blog 1"
+            "alt":"blog 5"
         },
-        "naslov":"Blog 1",
+        "naslov":"Simplicity And Minimalism Are The Ultimate Fashion Sophistication",
         "autor":{
             "id":1,
             "user":"njevric"
         },
         "datum":"2020-02-10",
-        "tekst":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+        "tekst":"When you think of classic fashion, what comes first to your mind? Isn’t it funny how we put different styles into folders and everyone sticks to it, well not everyone but you get what I mean. So what is the typical “classic fashion” outfit? The little black dress? A pencil skirt with a white shirt and pumps? Suit pants and a blouse? It is such a tricky question, because really, what defines classic? Well the word classic means “serving as a standard of excellence” right?",
         "kategorija":{
             "id":"2",
             "naziv": "news"
@@ -135,15 +135,15 @@
     {
         "slika":{
             "src":"blog6.jpg",
-            "alt":"blog 1"
+            "alt":"blog 6"
         },
-        "naslov":"Blog 1",
+        "naslov":"Easy Ways To Revamp Your Stylish Travel Wardrobe",
         "autor":{
             "id":1,
             "user":"njevric"
         },
         "datum":"2020-03-07",
-        "tekst":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+        "tekst":"Time to revamp your wardrobe? If you’re feeling bored or frustrated with your stylish travel wardrobe, it might be time to change things up a bit. It happens to all of us. Maybe you haven’t really thought about your travel style in a while, or you’ve recently lost weight (good for you!), or you’ve discovered some beautiful new fashions on your travels abroad.",
         "kategorija":{
             "id":"1",
             "naziv": "trends"
