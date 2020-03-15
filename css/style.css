@@ -758,6 +758,9 @@ textarea{
     
   }
   @media screen and (max-width: 576px) {
+    header{
+        height:70vh;
+    }
     #proizvodiPrikaz, #blogPrikaz {
         margin:0px auto;
         padding-left: 0px;
