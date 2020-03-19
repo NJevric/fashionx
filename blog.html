@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
         <link rel="stylesheet" href="css/style.css"/>
+        <link rel="icon" type="image/x-icon" href="img/ikona.ico" /> 
     </head>
     <body>  
          <header id="headerProizvodi">
@@ -48,30 +49,33 @@
     <main id="blogStranica">
         <div class="container mx-auto">
             <div class="row">
-                <div class="col-lg-3">
-                    <form action="#" id="filtriranje">
-                
-                    </form>
-                    <form action="#">
-                
-                        <div class="input-group mb-3 searchDiv">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="search"><i class="fas fa-search"></i></span>
+                <div class="col-lg-3 col-12 mx-auto mb-3">
+                    <form action="#" class="mb-3">
+                        <div class="row">
+                            <!-- prikaz search bara -->
+                            <div class="input-group col-lg-10 col-md-4 col-12 searchDiv">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="search"><i class="fas fa-search"></i></span>
+                                </div>
+                                <input type="text" class="form-control" id="searchInput" placeholder="Search Blog Headlines"/>
                             </div>
-                            <input type="text" class="form-control" id="searchInput" placeholder="Search Blog Headlines"/>
+                            <!-- endof searchbar -->
+                            <!-- prikaz sorta -->
+                            <div class="col-lg-10 col-md-4 col-6 my-2 my-md-0 my-lg-3 sortPadding">
+                                <select class="form-control" id="sortiranje">
+                        
+                                </select>
+                            </div>
+                            <!-- end of sort -->
+                            <!-- prikaz ddlKat -->
+                            <div class="col-lg-10 col-md-4 col-6 mt-2 mt-md-0 categoryPadding">
+                                <input type="date" id="datum" class="form-control"/>
+                            </div>
+                            <!-- endof ddlKat -->
                         </div>
                     </form>
-                    <form action="#" class="mb-3">
-                        <select class="form-control" id="sortiranje">
-                        
-                        </select>
-                    </form>
-                    <form action="#" class="mb-5">
-                        <input type="date" id="datum" class="form-control"/>
-                    </form>
                 </div>
-
-                <div class="col-lg-9 row mx-auto" id="blogPrikaz">
+                <div class="col-lg-9 col-12 row" id="blogPrikaz">
                   
                        <!-- <div class="col-lg-4 proizvod">
                         <img src="img/blog1.jpg" class="img-fluid mb-3"/>

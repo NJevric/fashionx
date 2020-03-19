@@ -5,8 +5,8 @@
             "src":"proizvod.jpg",
             "alt":"Proizvod 1"
         },
-        "naslov":"Sweather",
-        "opis":"Stripper Sweather",
+        "naslov":"Sweater",
+        "opis":"Stripped Sweater",
         "cena":30,
         "pol":"muski"
     },
@@ -16,8 +16,8 @@
             "src":"proizvod2.jpg",
             "alt":"Proizvod 2"
         },
-        "naslov":"Sweather",
-        "opis":"Stripper Sweather",
+        "naslov":"Sweater",
+        "opis":"Stripped Sweater",
         "cena":35,
         "pol":"muski"
     },
@@ -93,9 +93,9 @@
         "id":9,
         "slika":{
             "src":"womenSweather1.jpg",
-            "alt":"Women Sweather"
+            "alt":"Women Sweater"
         },
-        "naslov":"Sweather",
+        "naslov":"Sweater",
         "opis":"Mao collar blouse",
         "cena":25,
         "pol":"zenski"
@@ -104,9 +104,9 @@
         "id":10,
         "slika":{
             "src":"womenSweather2.jpg",
-            "alt":"Women Sweather"
+            "alt":"Women Sweater"
         },
-        "naslov":"Sweather",
+        "naslov":"Sweater",
         "opis":"Jewel button blouse",
         "cena":30,
         "pol":"zenski"

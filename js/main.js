@@ -235,7 +235,7 @@ function ispisProizvodaFilter(obj){
     
    obj.forEach(element => {ispis+=` 
    
-        <div class="col-lg-4 col-md-4 col-6 proizvod mb-5  mx-md-0">
+        <div class="col-lg-4 col-md-4 col-6 proizvod mb-4 mb-md-5  mx-md-0">
         <div class="proizvodSlika">
         <img src="img/${element.slika.src}" class="img-fluid mb-3 mx-auto" alt="${element.slika.alt}"/>
         </div>
@@ -247,7 +247,7 @@ function ispisProizvodaFilter(obj){
             <p class="cenaProizvod">${element.cena} &euro;</p>
             <i class="fas fa-shopping-cart ml-auto dodajUKorpu" data-id=${element.id} data-value="${element.naslov}"></i>  
         </div>
-        <p class="korpaInfo"></p>
+        
         </div>`
        
    });
@@ -715,10 +715,10 @@ if(url.indexOf("blog.html")!=-1){
         let ispis="";
         for(let i of data){
             ispis+=`
-                <div class="col-lg-6 proizvod mb-5">
-                    <img src="img/${i.slika.src}" class="img-fluid mb-3" alt="${i.slika.alt}"/>
-                    <h3>${i.naslov}</h3>
-                    <p>By ${i.autor.user} / ${i.datum}</p>
+                <div class="col-lg-6 col-12 mb-4 mb-md-5  blogPojedinacni">
+                    <img src="img/${i.slika.src}" class="img-fluid mb-4" alt="${i.slika.alt}"/>
+                    <h3 class="mb-3">${i.naslov}</h3>
+                    <p>By <strong>${i.autor.user} </strong> / ${i.datum}</p>
                     <p>${i.tekst}</p>
                     <hr/>
                     <div class="d-flex">

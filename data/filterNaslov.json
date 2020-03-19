@@ -2,7 +2,7 @@
     "muski":[
         {
         "id":1,
-        "naziv":"Sweather"
+        "naziv":"Sweater"
     },
     {
         "id":2,
@@ -28,7 +28,7 @@
     "zenski":[
         {
             "id":1,
-            "naziv":"Sweather"
+            "naziv":"Sweater"
         },
         {
             "id":2,

@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
         <link rel="stylesheet" href="css/style.css"/>
+        <link rel="icon" type="image/x-icon" href="img/ikona.ico" /> 
     </head>
     <body>  
          <header id="headerProizvodi">
@@ -46,34 +47,40 @@
        
         <div class="container mx-auto">
             <div class="row">
-                <div class="col-lg-3 col-10 mb-2">
+                <div class="col-lg-3 col-12 mx-auto mb-3">
                     <form action="#" class="mb-3">
-                        <div class="input-group mb-3 searchDiv">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="search"><i class="fas fa-search"></i></span>
+                        <div class="row">
+                            <!-- prikaz search bara -->
+                                <div class="input-group col-lg-10 col-md-4 col-12 searchDiv">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="search"><i class="fas fa-search"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" id="searchInput" placeholder="Search Products" aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
+                            <!-- endof searchbar -->
+                            <!-- prikaz sorta -->
+                            <div class="col-lg-10 col-md-4 col-6 sortPadding">
+                                <select class="form-control my-lg-3 my-md-0 mt-2" id="sortiranje">
+                                </select>
                             </div>
-                            <input type="text" class="form-control" id="searchInput" placeholder="Search Products" aria-label="Username" aria-describedby="basic-addon1">
+                            <!-- end of sort -->
+                            <!-- prikaz ddlKat -->
+                            <div class="col-lg-10 col-md-4 col-6 my-md-0 mt-2 categoryPadding">
+                                <div class="selectBox" onclick="prikaziChbZaFilter()">
+                                    <select class="form-control">
+                                        <option>Choose category</option>
+                                    </select>
+                                    <div class="sakrijOption"></div>
+                                </div>
+                                <div id="chbs">
+          
+                                </div>
+                            </div>
+                            <!-- endof ddlKat -->
                         </div>
-                    </form>
-                    <form action="#" class="mb-3">
-                        <select class="form-control" id="sortiranje">
-                        
-                        </select>
-                    </form>
-                    <form class="mb-3">
-                        <div class="selectBox" onclick="prikaziChbZaFilter()">
-                            <select>
-                                <option>Choose category</option>
-                            </select>
-                            <div class="sakrijOption"></div>
-                        </div>
-                        <div id="chbs">
-  
-                        </div>
-               
                     </form>
                 </div>
-                <div class="col-lg-9 row col-12 mt-5 mt-md-0" id="proizvodiPrikaz">
+                <div class="col-lg-9 col-12 row" id="proizvodiPrikaz">
                 
                 
                
