@@ -1,7 +1,7 @@
 [
     {
         "naslovPay":"Payment method",
-        "tekstPay":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
+        "tekstPay":"FashionX supports card payments and other payment methods such as PayPal, Visa and MasterCard.",
         "ikonePay":[
             {
                 "klasa":"fab fa-cc-visa"
@@ -12,8 +12,6 @@
             {
                 "klasa":"fab fa-cc-mastercard"
             }
-            
-           
         ],
         "secureIkona":"fas fa-lock mt-1 mr-2",
         "secureTekst":"Secure online payment",

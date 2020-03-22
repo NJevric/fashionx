@@ -1,5 +1,5 @@
 {
-    "muski":[
+    "mNaslov":[
         {
         "id":1,
         "naziv":"Sweater"
@@ -24,8 +24,8 @@
         "id":6,
         "naziv":"Shoes"
     }
-],
-    "zenski":[
+    ],
+    "zNaslov":[
         {
             "id":1,
             "naziv":"Sweater"
