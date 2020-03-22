@@ -8,7 +8,6 @@
 h2,h3,li{
     font-family: 'Sen', sans-serif;
 }
-
 /* ENDOF FONTS */
 .form-control{
     border-radius: 0px!important;
@@ -82,12 +81,10 @@ a:hover{
 header{
     overflow: hidden;
     height: 100vh;
-    /* background-image: url(../bcimg5.jpg); */
     background-image: url(../img/heder.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    /* background: #f9f9f9; */
     position: relative;
 }
 
@@ -106,25 +103,17 @@ header{
     font-size:18px;
     font-weight: 500;
     display:inline;
-    /* transition: 0.3s ease-in; */
     padding:10px 20px;
-    /* transition:.2s ease-in; */
-    
 }
 #navigacija ul li:hover{
     padding: 10px 18px;
-    
     border:2px solid goldenrod;
-    /* border-top:2px solid goldenrod; */
-    
 }
 #navigacijaLinkovi{
     position:absolute;
     right:100px;
     top:20px;
-    /* text-align:left; */
-    display:none;
-    
+    display:none; 
 }
 #navigacijaLinkovi a{
     color:#000;
@@ -184,19 +173,15 @@ header{
     
   }
 
-
-
-
 /* KRAJ NAVIGACIJE */
+
 /* NASLOV */
 #naslov{
     opacity: 0;
 }
 #naslov h1{
     font-size:3em;
-    /* margin-left: 100px; */
     margin-top:200px;
-    
 }
 #naslov h1 span{
     font-size:2em;
@@ -208,6 +193,7 @@ header{
 .tekstNaslov{
     font-size:1.8em;
 }
+
 .dugmeNaslov{
     font-size:1.3em;
     border:1px solid goldenrod;
@@ -330,10 +316,7 @@ header{
     padding-left: 0px!important;
     padding-right: 0px!important;
 }
-.blog1{
-    /* margin-bottom: 50px; */
-  
-}
+
 .blogTekst{
     background-color: #fff;
 }
@@ -375,16 +358,14 @@ footer{
     color:#fff;
     
 }
-/* .marginaFoo .row{
-    margin-left:0px!important;
-} */
+
 .posts img {
     width:100%;
     height: 100%;
     transition:0.2s ease-in-out;
 }
 .posts img:hover{
-    border:4px solid goldenrod;
+    border:2px solid goldenrod;
    
 }
 
@@ -441,7 +422,9 @@ footer{
     padding-bottom: 2px;
     text-decoration: none;
 }
-    /* padding-left: 15px;
+.dokumentacija{
+    color:#fff!important;
+}
 /* KRAJ FOOTERA */
 
 /* STRANICA MUSKE ODECE */
@@ -455,9 +438,7 @@ footer{
 }
 #naslovProizvodi h1{
     font-size:3em;
-    /* margin-left: 100px; */
     margin-top:100px;
-    
 }
 #naslovProizvodi p{
     font-size:1.2em;
@@ -468,13 +449,10 @@ footer{
     font-size:1.2em;
 }
 #proizvodiPrikaz,#blogPrikaz{
-    /* border-left:2px solid #BDC3C7;
-    border-left:1px solid goldenrod; */
     padding-left: 50px;
 }
 .selectBox {
     position: relative;
-    /* width:250px; */
   }
   
   .selectBox select {
@@ -491,14 +469,12 @@ footer{
     top: 0;
     bottom: 0;
   }
-  /* OVER SLUZI DA SAKRIJE SELECT NA OPTION KADA SE KLIKNE NA SELECT */
+  /* OVER SLUZI DA SAKRIJE 'SELECT NA OPTION' KADA SE KLIKNE NA SELECT */
 
   #chbs {
     display: none;
     border: 1px #dadada solid;
     transition: 0.5s ease;
-    /* width:250px; */
-
   }
  
   #chbs label {
@@ -516,15 +492,9 @@ footer{
       min-height: 50px;
   }
 /* main */
-#glavni{
-    padding:0px;
-}
+
 main{
- 
-    padding:100px 0px;
-}
-.searchDiv,#sortiranje,#datum{
-    /* width:250px; */
+    padding:40px 0px;
 }
 
 .proizvodSlika {
@@ -544,15 +514,7 @@ main{
 .proizvodSlika:hover img {
     transform: scale(1.3);
 }
-/* .searchDiv input{
-    border:0px;
-    border-bottom: 1px solid #000;
-    border-radius: 0px;
-}
-.searchDiv #search{
-    background: transparent!important;
-    border:0px;
-} */
+
 #filtriranje{
     font-size:1.1em;
     letter-spacing: 1px;
@@ -569,11 +531,8 @@ main{
     font-weight: bold;
 }
 .cena i{
-     /* background: #ababab; */
     display: block;
-    /* width: 35px; */
     height: 35px;
-    /* border-radius: 50%; */
     padding: 7px;
     color:#000;
     transition:0.2s ease-in;
@@ -585,34 +544,11 @@ main{
     color:#fff;
 }
 /* kraj maina */
+
 /* logoKompanije */
 #logoKompanije{
     background-color:#F2F1EF;
-
-   
 }
-.slajder{
-    position: relative;
-}
-
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: #000;
-    font-weight: bold;
-    font-size: 20px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-  }
-  .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-  }
 /* kraj logo kompanija */
 /* KRAJ STRANICE MUSKE ODECE */
 
@@ -653,7 +589,7 @@ textarea{
     font-size:1.2em;
 }
 
-/* STRANICA KONTAKT */
+/*KRAJ STRANICA KONTAKT */
 
 /* STRANICA CART */
 .cartSlika{
@@ -676,7 +612,6 @@ textarea{
 .desniBlokCart p{
     position: absolute;
     bottom:0px;
-    /* left:-40px; */
    border-bottom: 2px solid goldenrod;
    font-size:1.2em;
    right: 20px;
@@ -692,20 +627,8 @@ textarea{
 }
 
 @media screen and (max-width: 1024px) {
-    .leviBlokCart p,.desniBlokCart p{
-        position: relative;
-        left:0px;
-    }
     
-    .desniBlokCart p{
-        border:0px;
-        position: absolute;
-        left:13px;
-        top:0px;
-    }
-    .cartSlika{
-        border-bottom: 0px;
-    }
+    /* indeks strana */
     #navigacija ul li{
        
         font-size:17px;
@@ -729,15 +652,6 @@ textarea{
         width: 150px;
         padding: 8px 4px;
     }
-
-    #about{
-        margin-top:0px;
-        margin-bottom:20px;
-    }
-    .onamaTekst p,.onamaTekst h2{
-        width:auto;
-
-    }
     #subscription {
         height: 500px;
       
@@ -756,12 +670,37 @@ textarea{
         font-size: 1.0em;
         padding: 8px 4px;
     }
+    #about{
+        margin-top:0px;
+        margin-bottom:20px;
+    }
+    .onamaTekst p,.onamaTekst h2{
+        width:auto;
+
+    }
+    /* cart strana */
+    .leviBlokCart p,.desniBlokCart p{
+        position: relative;
+        left:0px;
+    }
+    
+    .desniBlokCart p{
+        border:0px;
+        position: absolute;
+        left:13px;
+        top:0px;
+    }
+    .cartSlika{
+        border-bottom: 0px;
+    }
+    
   }
 
   @media screen and (max-width: 768px) {
-      #hamburger{
+      /* indeks strana */
+    #hamburger{
           right:0px;
-      }
+    }
     #navigacijaLinkovi{
         z-index:200; 
         right: 40px;
@@ -791,6 +730,7 @@ textarea{
         width:250px;
         margin-top: 30px;
     }
+    /*end of index strana */
     #naslovProizvodi{
         margin-top:0px;
          color:#fff;
@@ -812,10 +752,6 @@ textarea{
         background-image: url(../img/header6.jpg);
         
     }
-    /* #naslovProizvodi{
-       margin-top:0px;
-        color:#fff;
-    } */
     #naslovProizvodi p{
         width:250px;
     }
@@ -891,9 +827,7 @@ textarea{
   
     #navigacija ul li:hover{
         padding: 8px 8px;
-        
         border:2px solid goldenrod;
-        /* border-top:2px solid goldenrod; */
         width:100px;
     }
     #navigacijaLinkovi{
@@ -959,10 +893,6 @@ textarea{
         font-size:1.1em;
       
     }
-    /* #glavniSlike{
-     width:100%;
-        
-    } */
     .onamaTekst p{
         font-size:0.95em;
     }
@@ -1028,10 +958,6 @@ textarea{
         position: relative;
         width:300px;
        z-index:101;
-    }
-    .searchDiv, #sortiranje, .selectBox, #chbs,#datum {
-        /* width: 200px; */
-       
     }
 }
 
