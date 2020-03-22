@@ -93,7 +93,7 @@ window.onload=function(){
                 document.getElementById("mapaIspis").innerHTML=ispisMapa;
     
                 // ISPIS COPYRIGHT
-                let ispisCopy=`<div class="col-lg-12 text-center"><a href="https://njevric.github.io/fashionx/dokumentacijawp2.pdf" target="_blank" class="dokumentacija">Documentation</a>`;
+                let ispisCopy=`<div class="col-lg-12 text-center"><a href="dokumentacijawp2.pdf" target="_blank" class="dokumentacija">Documentation</a>`;
                 for(let i of data){
                     ispisCopy+=`<p class="mt-2">&copy; ${i.copy}</p>`
                 }
