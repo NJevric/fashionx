@@ -146,7 +146,7 @@ function vratiZenske(data){
 }
 
 //INDEX STRANA
-if(url.indexOf("index.html")!=-1 || urlBezIndex.indexOf("fashionx/")!=-1){
+if(url.indexOf("index.html")!=-1 || urlBezIndex.indexOf("fashionx/ ")!=-1){
    
 // contactInfo
 (function(){
@@ -205,21 +205,22 @@ function ispisBlokInfo(){
         for(let i in obj){
             ispis+=`<div class="col-lg-4 col-sm-12 p-4">
              <div class="transportNaslov d-flex justify-content-center">
-                 <i class="${obj[i][2]} mr-3 mt-2"></i>
-                 <h3>${obj[i][0]}</h3>
+                 <i class="${nizBlok[i][2]} mr-3 mt-2"></i>
+                 <h3>${nizBlok[i][0]}</h3>
              </div>
-             <p class="mx-auto text-center">${obj[i][1]}</p>
+             <p class="mx-auto text-center">${nizBlok[i][1]}</p>
          </div>`;
         }
         document.querySelector("#ispisBlok").innerHTML=ispis;
     }
     ispisBlok(nizBlok);
+    
 }
- ispisBlokInfo();
+ispisBlokInfo();
 }
 
 //MAN STRANA
-if(url.indexOf("man.html")!=-1 && urlBezIndex.indexOf("wp2sajt")==-1){
+if(url.indexOf("man.html")!=-1){
     
     document.getElementById("sortiranje").addEventListener("change",sortiraj);
     function ajaxZaProizvode(callbackSuccess){
