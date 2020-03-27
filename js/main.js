@@ -133,7 +133,7 @@ window.onload=function(){
         $("#logo").animate({opacity:'1'},2000);
         $("#navigacija").animate({opacity:'1'},2000);
     })();
-    ispisBlokInfo();
+    
 }
 
 var url=location.href;
@@ -215,7 +215,7 @@ function ispisBlokInfo(){
     }
     ispisBlok(nizBlok);
 }
-
+ispisBlokInfo();
 }
 
 //MAN STRANA
