@@ -133,7 +133,7 @@ window.onload=function(){
         $("#logo").animate({opacity:'1'},2000);
         $("#navigacija").animate({opacity:'1'},2000);
     })();
-    
+   
 }
 
 var url=location.href;
@@ -146,8 +146,8 @@ function vratiZenske(data){
 }
 
 //INDEX STRANA
-if(url.indexOf("index.html")!=-1 || urlBezIndex.indexOf("fashionx")!=-1){
-
+if(url.indexOf("index.html")!=-1 || urlBezIndex.indexOf("/")!=-1){
+   
 // contactInfo
 (function(){
     $(".socials").hide();
@@ -205,21 +205,21 @@ function ispisBlokInfo(){
         for(let i in obj){
             ispis+=`<div class="col-lg-4 col-sm-12 p-4">
              <div class="transportNaslov d-flex justify-content-center">
-                 <i class="${nizBlok[i][2]} mr-3 mt-2"></i>
-                 <h3>${nizBlok[i][0]}</h3>
+                 <i class="${obj[i][2]} mr-3 mt-2"></i>
+                 <h3>${obj[i][0]}</h3>
              </div>
-             <p class="mx-auto text-center">${nizBlok[i][1]}</p>
+             <p class="mx-auto text-center">${obj[i][1]}</p>
          </div>`;
         }
         document.querySelector("#ispisBlok").innerHTML=ispis;
     }
     ispisBlok(nizBlok);
 }
-ispisBlokInfo();
+ ispisBlokInfo();
 }
 
 //MAN STRANA
-if(url.indexOf("man.html")!=-1){
+if(url.indexOf("man.html")!=-1 && urlBezIndex.indexOf("wp2sajt")==-1){
     
     document.getElementById("sortiranje").addEventListener("change",sortiraj);
     function ajaxZaProizvode(callbackSuccess){
