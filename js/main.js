@@ -146,7 +146,7 @@ function vratiZenske(data){
 }
 
 //INDEX STRANA
-if(url.indexOf("index.html")!=-1 || urlBezIndex.indexOf("/")!=-1){
+if(url.indexOf("index.html")!=-1 || urlBezIndex.indexOf("fashionx/")!=-1){
    
 // contactInfo
 (function(){
