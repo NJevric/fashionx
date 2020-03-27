@@ -133,20 +133,19 @@ window.onload=function(){
         $("#logo").animate({opacity:'1'},2000);
         $("#navigacija").animate({opacity:'1'},2000);
     })();
-   
+    
 }
 
 var url=location.href;
-var urlBezIndex=location.pathname;
 function vratiMuske(data){
     return data.filter(x => x.pol == "muski");
 }
 function vratiZenske(data){
     return data.filter(x => x.pol == "zenski");
 }
-
+let urlReg=/^.+fashionx\/$/;
 //INDEX STRANA
-if(url.indexOf("index.html")!=-1 || urlBezIndex.indexOf("fashionx/ ")!=-1){
+if(url.indexOf("index.html")!=-1 || urlReg.test(url)){
    
 // contactInfo
 (function(){
