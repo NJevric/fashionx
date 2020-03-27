@@ -356,7 +356,8 @@ if(url.indexOf("man.html")!=-1){
                     return a.naslov>b.naslov?-1:1;
                     })
                 }
-                ispisProizvoda(nizZaCuvanjeSorta);   
+                ispisProizvoda(nizZaCuvanjeSorta);
+                upisiProizvodeULs(nizZaCuvanjeSorta);     
             }
         );
     }
@@ -568,6 +569,7 @@ if(url.indexOf("woman.html")!=-1){
                     }) 
                 }
                 ispisProizvoda(nizZaCuvanjeSorta);
+                upisiProizvodeULs(nizZaCuvanjeSorta);    
             }
         );
     }
