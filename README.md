@@ -5,10 +5,6 @@ Project for Web Programming 2 course @ ICT College
 Front-end E-commerce Website
 <br/>
 <b>Date</b> : may 2020
-## Technologies used
-* Photoshop
-* HTML/XML
-* CSS
-* Javascript
+
 ## Link to website
 https://njevric.github.io/fashionx/
