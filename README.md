@@ -1,5 +1,5 @@
-Web Programming 2 Website (sort/filter/ajax/json/localStorage)
-# (sort/filter/ajax/json/localStorage)
+
+# sort/filter/ajax/json/localStorage
 Project for Web Programming 2 course @ ICT College
 <br/>
 Front-end E-commerce Website
