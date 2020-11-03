@@ -4,7 +4,7 @@ Project for Web Programming 2 course @ ICT College
 <br/>
 Front-end E-commerce Website
 <br/>
-<b>Date</b> : april 2020
+<b>Date</b> : may 2020
 ## Technologies used
 * Photoshop
 * HTML/XML
